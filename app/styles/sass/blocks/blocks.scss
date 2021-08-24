@@ -1,0 +1,21 @@
+.btn-main{
+  background-color: transparent;
+  border: 2px solid $secondary;
+  border-radius: 60px;
+  padding: 11px 26px;
+  color: $accent;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 130%;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+}
+
