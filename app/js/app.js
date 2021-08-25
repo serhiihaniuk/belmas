@@ -1,4 +1,14 @@
+let throttlePause;
 
+const throttle = (callback, time) => {
+    if (throttlePause) return;
+
+    throttlePause = true;
+    setTimeout(() => {
+        callback();
+        throttlePause = false;
+    }, time);
+};
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -9,11 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const portfolioSlider = document.querySelector(".portfolio-page__slider");
     function updateSort(el) {
+        portfolioSlider.style.touchAction = ""
+
         const scrollWidth = el.scrollWidth;
         const scrollLeft = el.scrollLeft;
         const width = el.offsetWidth;
         const items = el.children;
-
         if (scrollLeft <= width) {
             el.prepend(items[items.length - 1]);
             el.scrollLeft = scrollLeft + width;
@@ -25,15 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let lastscroll;
-    portfolioSlider.addEventListener("scroll", function() {
-        const el = this;
 
-        if (lastscroll) {
-            clearTimeout(lastscroll);
-        }
-        lastscroll = setTimeout(function() {
-            updateSort(el);
-        }, 50);
-    });
+    portfolioSlider.addEventListener("scroll", ()=>{
+        throttle(function() {
+            portfolioSlider.style.touchAction = "none"
+            if (lastscroll) {
+                clearTimeout(lastscroll);
+            }
+            lastscroll = setTimeout(function() {
+                updateSort(portfolioSlider);
+            }, 300);
+        }, 300)
+    })
     updateSort(portfolioSlider)
 })
