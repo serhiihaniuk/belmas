@@ -6,20 +6,34 @@ document.addEventListener('DOMContentLoaded', () => {
     menuItem.addEventListener("click", () => {
         menuItem.classList.toggle("open")
     })
-    const portfolioSlide1 = document.getElementById('slide1')
-    const portfolioSlide2 = document.getElementById('slide2')
-    const portfolioSlide3 = document.getElementById('slide3')
 
-    const btnToSlide2 = document.getElementById('toSlide2')
-    const btnToSlide1 = document.getElementById('toSlide1')
+    const portfolioSlider = document.querySelector(".portfolio-page__slider");
+    function updateSort(el) {
+        const scrollWidth = el.scrollWidth;
+        const scrollLeft = el.scrollLeft;
+        const width = el.offsetWidth;
+        const items = el.children;
 
-    console.log(btnToSlide2, btnToSlide2)
+        if (scrollLeft <= width) {
+            el.prepend(items[items.length - 1]);
+            el.scrollLeft = scrollLeft + width;
+        }
+        if (scrollWidth - scrollLeft <= width) {
+            el.append(items[0]);
+            el.scrollLeft = scrollLeft - width;
+        }
+    }
 
-    btnToSlide1.addEventListener('click',() => {
-        console.log(123)
-        portfolioSlide1.scrollIntoView()
-    })
-    btnToSlide2.addEventListener('click',() => {
-        portfolioSlide2.scrollIntoView()
-    })
+    let lastscroll;
+    portfolioSlider.addEventListener("scroll", function() {
+        const el = this;
+
+        if (lastscroll) {
+            clearTimeout(lastscroll);
+        }
+        lastscroll = setTimeout(function() {
+            updateSort(el);
+        }, 50);
+    });
+    updateSort(portfolioSlider)
 })
