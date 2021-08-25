@@ -28,7 +28,7 @@
   .menu__logo {
     transform: rotate(45deg) translateY(0);
   }
-  
+
 }
 
 .menu__wrapper {
@@ -70,6 +70,7 @@
   align-items: center;
   display: flex;
   transform: translateX(25%);
+  z-index: 60;
 
 }
 
