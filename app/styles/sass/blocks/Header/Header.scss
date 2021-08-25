@@ -18,7 +18,11 @@
   padding: 0 25px;
   position: relative;
 }
-
+#nav-icon3.open{
+  span {
+    background: #fff;
+  }
+}
 
 #nav-icon3 span:nth-child(1) {
   top: 0px;

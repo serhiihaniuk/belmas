@@ -11,17 +11,24 @@
   display: flex;
   flex-direction: column;
   border-radius: 0 0 0 100%;
-  transform: translateY(-100%);
+  transform: translateY(-130%);
   transition: border-radius .5s ease .3s, transform .4s ease-out;
+  overflow: hidden;
+  &__bg {
+    position: absolute;
+    bottom: -15%;
+  }
 }
 
-.menu.open{
+
+.menu.open {
   transform: translateY(0);
   border-radius: 0;
-  .menu__logo{
-    transform: rotate(188deg);
-  }
 
+  .menu__logo {
+    transform: rotate(45deg) translateY(0);
+  }
+  
 }
 
 .menu__wrapper {
@@ -36,12 +43,14 @@
   position: relative;
 
 }
+
 .menu__nav {
   flex: 1 0 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .menu__list {
   display: block;
   font-weight: 400;
@@ -54,7 +63,7 @@
   margin: 0 0 5px 60px;
 }
 
-.menu__order{
+.menu__order {
   flex: 1 0 50%;
   position: relative;
   justify-content: center;
@@ -64,7 +73,7 @@
 
 }
 
-.menu__logo{
+.menu__logo {
   position: absolute;
   transition: transform 4.4s ease-out;
 }
@@ -79,4 +88,7 @@
   flex: 0 0 150px;
   cursor: pointer;
 
+  &:visited {
+    color: $accent;
+  }
 }
