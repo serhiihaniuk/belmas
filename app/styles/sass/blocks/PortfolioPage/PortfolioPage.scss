@@ -120,7 +120,7 @@
 
 .portfolio-page__description {
   text-align: center;
-  padding: 10px 10px 5px;
+  padding: 10px 20px 5px;
 }
 
 .portfolio-page__title {
@@ -130,7 +130,10 @@
   display: block;
   margin: 0 0 22px;
 }
-
+.portfolio-page__text{
+  max-width: 320px;
+  margin: 0 auto;
+}
 .portfolio-page__next-page {
   width: 100%;
   max-width: 500px;
@@ -169,8 +172,11 @@
   color: $accent;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 12px;
+  background-color: rgba(55,55,0,.1);
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .portfolio-page__controls {

@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const menuItem = document.getElementById("nav-icon3")
+    const menu = document.querySelector(".menu")
     menuItem.addEventListener("click", () => {
         menuItem.classList.toggle("open")
+        menu.classList.toggle("open")
     })
 
     const portfolioSlider = document.querySelector(".portfolio-page__slider")
@@ -20,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-    // slider watcher
     const watchSlides = function (entries, observer) {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -42,13 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         })
     };
-    const observer = new IntersectionObserver(watchSlides, {
+    const sliderObserver = new IntersectionObserver(watchSlides, {
         root: null,
         rootMargin: '0px',
         threshold: .6
     });
-    portfolioSlide.forEach((node) => {
-        observer.observe(node)
+    portfolioSlide.forEach((slide) => {
+        sliderObserver.observe(slide)
     })
-
 })
