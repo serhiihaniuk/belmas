@@ -10,14 +10,17 @@
   padding: 55px 0 15px;
   display: flex;
   flex-direction: column;
-  border-radius: 50%;
+  border-radius: 0 0 0 100%;
   transform: translateY(-100%);
-  transition: all .5s ease;
+  transition: border-radius .5s ease .3s, transform .4s ease-out;
 }
 
 .menu.open{
   transform: translateY(0);
   border-radius: 0;
+  .menu__logo{
+    transform: rotate(188deg);
+  }
 
 }
 
@@ -63,13 +66,14 @@
 
 .menu__logo{
   position: absolute;
-  top: 0;
+  transition: transform 4.4s ease-out;
 }
 
 .menu__link {
   color: $accent;
   font-size: 22px;
-  line-height: 150%;text-align: center;
+  line-height: 150%;
+  text-align: center;
   text-decoration-line: underline;
   text-transform: uppercase;
   flex: 0 0 150px;
