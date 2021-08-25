@@ -1,6 +1,6 @@
 .main-page {
   background-color: $bg-light;
-  padding: 15px 0;
+  padding: 15px 0 5px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 .main-page__wrapper {
-  padding: 0 0 15px;
+  padding: 0 0 25px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -36,6 +36,8 @@
 }
 .main-page__bg {
   position: absolute;
+  pointer-events: none;
+
 }
 
 .main-page__bg--1 {
@@ -43,6 +45,8 @@
   height: 300px;
   left: -32px;
   z-index: 1;
+  pointer-events: none;
+
 }
 
 .main-page__bg--2 {
@@ -50,11 +54,15 @@
   right: -25%;
   top: -44%;
   z-index: 1;
+  pointer-events: none;
+
 }
 
 .main-page__bg--3 {
   top: -227px;
   right: -177px;
+  pointer-events: none;
+
 }
 
 
