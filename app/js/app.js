@@ -1,15 +1,3 @@
-let throttlePause;
-
-const throttle = (callback, time) => {
-    if (throttlePause) return;
-
-    throttlePause = true;
-    setTimeout(() => {
-        callback();
-        throttlePause = false;
-    }, time);
-};
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const menuItem = document.getElementById("nav-icon3")
@@ -17,36 +5,49 @@ document.addEventListener('DOMContentLoaded', () => {
         menuItem.classList.toggle("open")
     })
 
-    const portfolioSlider = document.querySelector(".portfolio-page__slider");
-    function updateSort(el) {
-        portfolioSlider.style.touchAction = ""
+    const portfolioSlider = document.querySelector(".portfolio-page__slider")
+    const portfolioSlide = document.querySelectorAll('.portfolio-page__slide')
+    const prevSlideBtn = document.querySelector('#slider__prev')
+    const nextSlideBtn = document.querySelector('#slider__next')
+    let currentOffset = 0
 
-        const scrollWidth = el.scrollWidth;
-        const scrollLeft = el.scrollLeft;
-        const width = el.offsetWidth;
-        const items = el.children;
-        if (scrollLeft <= width) {
-            el.prepend(items[items.length - 1]);
-            el.scrollLeft = scrollLeft + width;
-        }
-        if (scrollWidth - scrollLeft <= width) {
-            el.append(items[0]);
-            el.scrollLeft = scrollLeft - width;
-        }
-    }
-
-    let lastscroll;
-
-    portfolioSlider.addEventListener("scroll", ()=>{
-        throttle(function() {
-            portfolioSlider.style.touchAction = "none"
-            if (lastscroll) {
-                clearTimeout(lastscroll);
-            }
-            lastscroll = setTimeout(function() {
-                updateSort(portfolioSlider);
-            }, 300);
-        }, 300)
+    prevSlideBtn.addEventListener('click', () => {
+        portfolioSlider.scrollTo({left: currentOffset - 500, behavior: 'smooth'})
     })
-    updateSort(portfolioSlider)
+    nextSlideBtn.addEventListener('click', () => {
+        portfolioSlider.scrollTo({left: currentOffset + 500, behavior: 'smooth'})
+    })
+
+
+    // slider watcher
+    const watchSlides = function (entries, observer) {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                currentOffset = entry.target.offsetLeft
+                entry.target.classList.add('active-slide')
+                if(entry.target.offsetLeft === 0) {
+                    prevSlideBtn.style.opacity = "0"
+                    return
+                }
+                if(entry.target.offsetLeft === (portfolioSlide.length -1) * 500) {
+                    nextSlideBtn.style.opacity = "0"
+                    return
+                }
+                nextSlideBtn.style.opacity = "1"
+                prevSlideBtn.style.opacity = "1"
+            } else {
+                entry.target.classList.remove('active-slide')
+            }
+
+        })
+    };
+    const observer = new IntersectionObserver(watchSlides, {
+        root: null,
+        rootMargin: '0px',
+        threshold: .6
+    });
+    portfolioSlide.forEach((node) => {
+        observer.observe(node)
+    })
+
 })
