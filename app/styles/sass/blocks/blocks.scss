@@ -13,7 +13,20 @@
   z-index: 5;
 
 }
-
+.btn-arrow{
+  background-color: transparent;
+  border: 0;
+  height: 45px;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+.brn-arrow__img--right{
+  transform: rotate(-90deg);
+}
+.brn-arrow__img--left{
+  transform: rotate(90deg);
+}
 .social {
   display: flex;
   gap: 20px;
