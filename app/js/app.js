@@ -7,15 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const portfolioSlider = document.querySelector(".portfolio-page__slider")
     const portfolioSlide = document.querySelectorAll('.portfolio-page__slide')
+    const portfolioSlideWidth = portfolioSlide[0].offsetWidth
     const prevSlideBtn = document.querySelector('#slider__prev')
     const nextSlideBtn = document.querySelector('#slider__next')
     let currentOffset = 0
 
     prevSlideBtn.addEventListener('click', () => {
-        portfolioSlider.scrollTo({left: currentOffset - 500, behavior: 'smooth'})
+        portfolioSlider.scrollTo({left: currentOffset - portfolioSlideWidth, behavior: 'smooth'})
     })
     nextSlideBtn.addEventListener('click', () => {
-        portfolioSlider.scrollTo({left: currentOffset + 500, behavior: 'smooth'})
+        portfolioSlider.scrollTo({left: currentOffset + portfolioSlideWidth, behavior: 'smooth'})
     })
 
 
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     prevSlideBtn.style.opacity = "0"
                     return
                 }
-                if(entry.target.offsetLeft === (portfolioSlide.length -1) * 500) {
+                if(entry.target === portfolioSlide[portfolioSlide.length -1] ){
                     nextSlideBtn.style.opacity = "0"
                     return
                 }
