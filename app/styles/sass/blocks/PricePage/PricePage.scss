@@ -1,0 +1,60 @@
+.price-page {
+  background-color: $bg-light;
+  padding: 55px 0 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-page__wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100vw;
+  max-width: 500px;
+  position: relative;
+  padding: 10px 0 0;
+  max-height: 100%;
+  justify-content: space-between;
+
+}
+
+.price-page__title {
+  text-align: center;
+  color: $dark;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1.1px;
+}
+.price-page__description{
+  flex: 0 0 auto;
+  text-align: center;
+  color: $dark;
+  margin: 30px 0 ;
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  color: $dark;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  margin: 0 0 30px;
+}
+
+.price__item {
+  flex: 0 0 40px;
+  padding: 20px;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.price__name{
+  font-size: 16px;
+}
+
+.price__duration{
+  flex: 0 0 100%;
+  font-size: 12px;
+}

@@ -49,11 +49,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  z-index: 60;
 }
 
 .menu__list {
-  display: block;
-  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 500;
   font-size: 36px;
   line-height: 56px;
   flex: 1 0 100%;
@@ -61,6 +65,8 @@
 
 .menu__item {
   margin: 0 0 5px 60px;
+  flex-grow: 1;
+
 }
 
 .menu__order {
@@ -69,7 +75,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  transform: translateX(25%);
+  transform: translate(25%, 25%);
   z-index: 60;
 
 }
@@ -81,12 +87,6 @@
 
 .menu__link {
   color: $accent;
-  font-size: 22px;
-  line-height: 150%;
-  text-align: center;
-  text-decoration-line: underline;
-  text-transform: uppercase;
-  flex: 0 0 150px;
   cursor: pointer;
 
   &:visited {

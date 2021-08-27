@@ -16,10 +16,19 @@
 .btn-arrow{
   background-color: transparent;
   border: 0;
-  height: 45px;
+  height: 35px;
+  width: 40px;
   cursor: pointer;
   position: relative;
   z-index: 9;
+
+}
+.btn-arrow__img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 .brn-arrow__img--right{
   height: 25px;
