@@ -3,6 +3,8 @@
   padding: 55px 0 5px;
   display: flex;
   flex-direction: column;
+  position: relative;
+
 }
 
 .price-page__wrapper {
@@ -13,10 +15,10 @@
   width: 100vw;
   max-width: 500px;
   position: relative;
-  padding: 10px 0 0;
+  padding: 10px 10px 0;
   max-height: 100%;
   justify-content: space-between;
-
+  z-index: 5;
 }
 
 .price-page__title {
@@ -26,12 +28,16 @@
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 1.1px;
+  position: relative;
+  z-index: 5;
 }
 .price-page__description{
   flex: 0 0 auto;
   text-align: center;
   color: $dark;
   margin: 30px 0 ;
+  position: relative;
+  z-index: 5;
 }
 .price {
   display: flex;
@@ -40,6 +46,8 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   margin: 0 0 30px;
+  position: relative;
+  z-index: 5;
 }
 
 .price__item {
@@ -57,4 +65,38 @@
 .price__duration{
   flex: 0 0 100%;
   font-size: 12px;
+}
+
+.price::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.price::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+.price::-webkit-scrollbar-thumb {
+  background: $bg-dark;
+}
+
+/* Handle on hover */
+.price::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.price-page__bg {
+  position: absolute;
+  z-index: 0;
+}
+
+.price-page__bg--1{
+  top: -50px;
+  left: 250px;
+}
+
+.price-page__bg--2{
+  bottom: -200px;
+  right: 0;
+
 }
