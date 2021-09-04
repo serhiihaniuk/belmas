@@ -48,11 +48,12 @@
   margin: 0 0 30px;
   position: relative;
   z-index: 5;
+  scrollbar-color: #87ceeb #ff5621;
 }
 
 .price__item {
   flex: 0 0 40px;
-  padding: 20px;
+  padding: 20px;guk
   scroll-snap-align: start;
   display: flex;
   justify-content: space-between;
