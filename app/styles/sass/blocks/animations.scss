@@ -34,6 +34,20 @@
 
   }
 }
+
+@keyframes move2 {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-35px, 45px) rotate(-32deg);
+
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -50,5 +64,13 @@
 }
 .bg-move-animation {
   animation: move 33s linear infinite;
+}
+
+.bg-move-animation2 {
+  animation: move2 26s linear infinite;
+}
+
+.bg-move-animation3 {
+  animation: move2 46s linear infinite;
 
 }

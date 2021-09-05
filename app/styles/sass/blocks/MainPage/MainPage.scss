@@ -96,92 +96,105 @@
 @keyframes dash {
   0% {
     stroke-dashoffset: 0;
+    stroke: #FFE2E2;
+
   }
   5%{
     stroke-dashoffset: 550;
+    stroke: #FFE2E2;
+
 
   }
   10% {
     stroke-dashoffset: 1100;
+    stroke: #FFE2E2;
 
   }
   15%{
     stroke-dashoffset: 1100;
+    stroke: #FFE2E2;
 
   }
   60%{
     stroke-dashoffset: 1650;
+    stroke: #FFBCBC;
 
   }
   65%{
     stroke-dashoffset: 1650;
+    stroke: #FFBCBC;
 
   }
   75% {
     stroke-dashoffset: 1100;
+    stroke: #FFBCBC;
 
   }
   80% {
     stroke-dashoffset: 1100;
+    stroke: #FFBCBC;
 
   }
   85% {
     stroke-dashoffset: 550;
+    stroke: #FFE2E2;
 
   }
   100% {
     stroke-dashoffset: 0;
+    stroke: #FFE2E2;
+
   }
 }
 
 @keyframes dash2 {
   0% {
     stroke-dashoffset: 0;
-    stroke: #E2C2B9;
+    stroke: #F5E8C7;
 
   }
   5%{
     stroke-dashoffset: 850;
-    stroke: #E2C2B9;
+    stroke: #F5E8C7;
 
 
   }
   10% {
     stroke-dashoffset: 1710;
-    stroke: #E7EAB5;
+    stroke: #DEBA9D;
   }
   15%{
     stroke-dashoffset: 1710;
-    stroke: #E7EAB5;
+    stroke: #DEBA9D;
 
   }
   60%{
     stroke-dashoffset: 850;
-    stroke: #F4DFD0;
+    stroke: #F9F9F9;
 
   }
   65%{
     stroke-dashoffset: 850;
-    stroke: #F4DFD0;
+    stroke: #F9F9F9;
 
   }
   75% {
     stroke-dashoffset: 1710;
-    stroke: #D4A5A5;
+    stroke: #FFBCBC;
 
   }
   80% {
     stroke-dashoffset: 1710;
-    stroke: #D4A5A5;
+    stroke: #FFBCBC;
 
   }
   85% {
     stroke-dashoffset: 850;
-  stroke: #986D8E;
+  stroke: #FFBCBC;
   }
   100% {
     stroke-dashoffset: 0;
-    stroke: #986D8E;
+    stroke: #F5E8C7;
 
   }
 }

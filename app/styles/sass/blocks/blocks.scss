@@ -41,5 +41,10 @@
 .social {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
+.social__img{
+  width: 30px;
+  height: 30px;
+}

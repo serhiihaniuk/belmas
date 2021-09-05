@@ -102,5 +102,10 @@
 }
 
 .price-page__bg--3{
+  bottom: -50px;
+  z-index: 3;
+}
+.price-page__bg--4{
+  top: -50px;
   z-index: 3;
 }
