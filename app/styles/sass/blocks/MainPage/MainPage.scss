@@ -86,13 +86,11 @@
   stroke-dasharray: 400;
   stroke-dashoffset: 0;
   animation: dash 11s linear infinite 1s;
-  //transform-origin: center;
 }
 .svg-animated2{
   stroke-dasharray: 600;
   stroke-dashoffset: 0;
-  animation: dash2 21s linear infinite 3s;
-  //transform-origin: center;
+  animation: dash2 21s linear infinite;
 }
 @keyframes dash {
   0% {
