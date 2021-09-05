@@ -26,7 +26,7 @@
     transform: translate(0px, 0px) rotate(0deg);
   }
   50% {
-    transform: translate(25px, 25px) rotate(6deg);
+    transform: translate(35px, 35px) rotate(6deg);
 
   }
   100% {
@@ -34,7 +34,20 @@
 
   }
 }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
 
+  100% {
+    transform: rotate(360deg);
+
+  }
+}
+.bg-rotate-animation{
+  animation: rotate 39s linear infinite;
+
+}
 .bg-move-animation {
   animation: move 33s linear infinite;
 

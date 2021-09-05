@@ -7,6 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.toggle("open")
     })
 
+    //menu links
+    const menuLinks = document.querySelectorAll('.menu__item')
+    menuLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            menu.classList.remove("open")
+            menuItem.classList.remove("open")
+        })
+    })
+    //slider
+
     const portfolioSlider = document.querySelector(".portfolio-page__slider")
     const portfolioSlide = document.querySelectorAll('.portfolio-page__slide')
     const portfolioSlideWidth = portfolioSlide[0].offsetWidth
@@ -27,11 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 currentOffset = entry.target.offsetLeft
                 entry.target.classList.add('active-slide')
-                if(entry.target.offsetLeft === 0) {
+                if (entry.target.offsetLeft === 0) {
                     prevSlideBtn.style.opacity = "0"
                     return
                 }
-                if(entry.target === portfolioSlide[portfolioSlide.length -1] ){
+                if (entry.target === portfolioSlide[portfolioSlide.length - 1]) {
                     nextSlideBtn.style.opacity = "0"
                     return
                 }
@@ -51,4 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     portfolioSlide.forEach((slide) => {
         sliderObserver.observe(slide)
     })
+
+
 })
