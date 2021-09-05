@@ -170,6 +170,10 @@
   top: -84%;
   transform: rotate(155deg) scale(.8);
   pointer-events: none;
+  @media (min-width: $bp4) {
+    left: 92%;
+    top: -64%;
+  }
 }
 
 .portfolio-page__bg--bot {
@@ -177,6 +181,11 @@
   right: 19%;
   transform: rotate(-30deg) scale(.8);
   pointer-events: none;
+  @media (min-width: $bp4) {
+    bottom: -51%;
+    right: 55%;
+
+  }
 
 }
 

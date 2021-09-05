@@ -51,6 +51,11 @@
   justify-content: space-between;
   position: relative;
   z-index: 60;
+  @media (min-width: $bp4) {
+    flex: 1 0 80%;
+
+
+  }
 }
 
 .menu__list {

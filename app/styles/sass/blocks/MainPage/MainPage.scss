@@ -137,41 +137,52 @@
 @keyframes dash2 {
   0% {
     stroke-dashoffset: 0;
+    stroke: #E2C2B9;
+
   }
   5%{
     stroke-dashoffset: 850;
+    stroke: #E2C2B9;
+
 
   }
   10% {
     stroke-dashoffset: 1710;
-
+    stroke: #E7EAB5;
   }
   15%{
     stroke-dashoffset: 1710;
+    stroke: #E7EAB5;
 
   }
   60%{
     stroke-dashoffset: 850;
+    stroke: #F4DFD0;
 
   }
   65%{
     stroke-dashoffset: 850;
+    stroke: #F4DFD0;
 
   }
   75% {
     stroke-dashoffset: 1710;
+    stroke: #D4A5A5;
 
   }
   80% {
-    stroke-dashoffset: 1700;
+    stroke-dashoffset: 1710;
+    stroke: #D4A5A5;
 
   }
   85% {
     stroke-dashoffset: 850;
-
+  stroke: #986D8E;
   }
   100% {
     stroke-dashoffset: 0;
+    stroke: #986D8E;
+
   }
 }
 
