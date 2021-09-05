@@ -10,10 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
     //menu links
     const menuLinks = document.querySelectorAll('.menu__item')
     menuLinks.forEach((link) => {
-        link.addEventListener('click', (e) => {
+        link.addEventListener('click', () => {
             menu.classList.remove("open")
             menuItem.classList.remove("open")
         })
+    })
+    // book popup
+    const popupWrapper = document.querySelector(".book")
+    const bookButtons = document.querySelectorAll('.open-popup')
+    bookButtons.forEach((bookButton) => {
+        bookButton.addEventListener('click', (e) => {
+
+            popupWrapper.classList.add('open')
+        })
+    })
+
+    popupWrapper.addEventListener('click', (e) => {
+        if (e.target === popupWrapper) {
+            popupWrapper.classList.remove('open')
+
+        }
     })
     //slider
 
