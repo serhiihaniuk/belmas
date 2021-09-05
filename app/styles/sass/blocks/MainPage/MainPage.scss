@@ -51,7 +51,7 @@
 
 .main-page__bg--2 {
   height: 200px;
-  right: -25%;
+  right: -45%;
   top: -44%;
   z-index: 1;
   pointer-events: none;
@@ -62,6 +62,8 @@
   top: -227px;
   right: -177px;
   pointer-events: none;
+  animation: move 11s linear infinite 1s;
+
 
 }
 
@@ -69,10 +71,67 @@
 .main-page__bg--4 {
   bottom: -208%;
   left: -232%;
+  animation: move 33s linear infinite 2s;
+
 }
 
 .logo {
   margin: 0 0 60px 0;
   position: relative;
   z-index: 5;
+}
+
+.svg-animated{
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+  animation: dash 11s linear infinite 1s;
+  //transform-origin: center;
+}
+.svg-animated2{
+  stroke-dasharray: 600;
+  stroke-dashoffset: 0;
+  animation: dash2 21s linear infinite 3s;
+  //transform-origin: center;
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+    transform: rotate(0deg);
+  }
+  25%{
+    stroke-dashoffset: 700;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  75%{
+    stroke-dashoffset: 750;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+  }
+}
+
+@keyframes dash2 {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+50% {
+  transform: translate(25px, 25px) rotate(6deg);
+
+}
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+
+  }
 }
