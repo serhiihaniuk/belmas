@@ -20,3 +20,22 @@
   animation: fadeIn 3s ease infinite;
   animation-delay: 1s;
 }
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(25px, 25px) rotate(6deg);
+
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+
+  }
+}
+
+.bg-move-animation {
+  animation: move 33s linear infinite;
+
+}

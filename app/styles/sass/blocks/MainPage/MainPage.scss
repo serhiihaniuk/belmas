@@ -62,7 +62,7 @@
   top: -227px;
   right: -177px;
   pointer-events: none;
-  animation: move 11s linear infinite 1s;
+  animation: move 21s linear infinite 1s;
 
 
 }
@@ -71,9 +71,10 @@
 .main-page__bg--4 {
   bottom: -208%;
   left: -232%;
-  animation: move 33s linear infinite 2s;
+  animation: move 33s linear infinite;
 
 }
+
 
 .logo {
   margin: 0 0 60px 0;
