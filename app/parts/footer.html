@@ -1,4 +1,26 @@
-<script src="js/app.min.js"></script>
 
+<script type="module">
+    import { Loader } from 'https://cdn.pika.dev/google-maps';
+    const options = {/* todo */};
+    const loader = new Loader('AIzaSyAtAsBIg1ZrIzrohby7y0p73kIiwbnkzaM', options);
+
+    const google = await loader.load();
+    const map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 51.12039468051586, lng: 17.030776440011643},
+        zoom: 16,
+        disableDefaultUI: true,
+
+    });
+    const marker = new google.maps.Marker({
+        position: {lat: 51.12016781688097 , lng: 17.03035265120548},
+        map: map,
+
+    });
+    marker.addListener('click', () => {
+        console.log('sdfsadsdf')
+        document.location.href = 'https://www.google.com/maps/place/Belmas+nail+studio/@51.1200465,17.0298499,18.92z/data=!4m5!3m4!1s0x470fe93b40abf46d:0x429010a85da51372!8m2!3d51.1201777!4d17.0303093'
+    })
+</script>
+<script src="js/app.min.js"></script>
 </body>
 </html>
