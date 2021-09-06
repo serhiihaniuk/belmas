@@ -1,38 +1,18 @@
 <!--#set var="title" value="Belmas Nail Studio" -->
 <!--#include virtual="/parts/header.html" -->
-<div class="wrapper">
-    <header class="header">
-        <div class="header__wrapper">
-            <div class="social">
-                <img src="images/dist/ig.svg" alt="" class="social__img">
-                <img src="images/dist/wa.svg" alt="" class="social__img">
-                <img src="images/dist/tg.svg" alt="" class="social__img">
-            </div>
 
-            <div id="nav-icon3">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
-    <div class="page-wrapper">
-        <div class="swiper-wrapper">
-            <section class="swiper-slide main-page">
-                <div class="main-page__wrapper">
-                    <img class="logo" src="images/dist/LOGO.svg" alt="">
-                    <button class="btn-main">Zarezerwuj wizytę</button>
-                    <img src="images/dist/line-1.svg" class="main-page__line main-page__line--1">
-                    <img src="images/dist/line-2.svg" class="main-page__line main-page__line--2">
-                </div>
-            </section>
-            <section class="swiper-slide">
-            </section>
-            <section class="swiper-slide">
-            </section>
-        </div>
-    </div>
-</div>
+
+<main class="page-wrapper">
+    <section class="swiper-slide main-page">
+        <!--#include virtual="/parts/main-page.html" -->
+    </section>
+    <section class="swiper-slide portfolio-page" id="portfolio-section">
+        <!--#include virtual="/parts/portfolio-page.html" -->
+    </section>
+    <section class="swiper-slide price-page" id="price-section">
+        <!--#include virtual="/parts/price-page.html" -->
+    </section>
+</main>
+
 
 <!--#include virtual="/parts/footer.html" -->

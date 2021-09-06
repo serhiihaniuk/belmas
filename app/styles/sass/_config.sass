@@ -3,17 +3,17 @@
 $accent: #F45A31
 $secondary: #4C8675
 $dark: #000
-$bg-light: #ECE2E1
+//$bg-light: #ECE2E1
+$bg-light: #FCF5EE
 $bg-semi-light: #86AFA6
 $bg-dark: #224438
-$fontsize: 18px
+$fontsize: 16px
 $textcolor: #fff
 $lineheight: 1.25
 $userfont: Comfortaa, sans-serif
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif
 
 // IMPORT SECTION
-//@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
 
@@ -27,10 +27,10 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif
 		src: url($furl) format('woff2')
 
 @include font('Comfortaa', normal, 400, '../fonts/Comfortaa-Regular.woff2')
-@include font('Comfortaa', normal, 500, '../fonts/Comfortaa-Medium.woff2')
-@include font('Comfortaa', normal, 300, '../fonts/Comfortaa-Light.woff2')
-@include font('Comfortaa', normal, 600, '../fonts/Comfortaa-SemiBold.woff2')
-@include font('Comfortaa', normal, 700, '../fonts/Comfortaa-Bold.woff2')
+@include font('Comfortaa', medium, 500, '../fonts/Comfortaa-Medium.woff2')
+@include font('Comfortaa', light, 300, '../fonts/Comfortaa-Light.woff2')
+@include font('Comfortaa', semi-bold, 600, '../fonts/Comfortaa-SemiBold.woff2')
+@include font('Comfortaa', bold, 700, '../fonts/Comfortaa-Bold.woff2')
 
 // GENERAL DOCUMENT STYLES
 
@@ -49,6 +49,7 @@ input, textarea
 		border-color: green
 
 body
+	background-color: $bg-light
 	font-family: $userfont
 	font-size: $fontsize
 	line-height: $lineheight
