@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const popupWrapper = document.querySelector(".book")
     const bookButtons = document.querySelectorAll('.open-popup')
     bookButtons.forEach((bookButton) => {
-        bookButton.addEventListener('click', (e) => {
+        bookButton.addEventListener('click', () => {
 
             popupWrapper.classList.add('open')
         })
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-    const watchSlides = function (entries, observer) {
+    const watchSlides = function (entries) {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 currentOffset = entry.target.offsetLeft

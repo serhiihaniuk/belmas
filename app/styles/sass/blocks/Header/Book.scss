@@ -26,7 +26,7 @@
   background-color: #FEFBF3;
   color: #11324D;
   width: 100%;
-  max-width: 600px;
+  max-width: 350px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -45,6 +45,36 @@
   transform: translateY(0);
   border-radius: 0 0 0 0;
   transition: border-radius .5s ease .3s, transform .4s ease-out;
+}
+.book__title{
+  font-size: 18px;
+  font-weight: bold;
+  max-width: 300px;
+  text-align: center;
+  align-self: center;
+  margin: 25px;
+  text-transform: uppercase;
+}
+.book__list {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 100%;
+  justify-content: flex-start;
+  gap: 20px;
+}
 
+.book__item {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0 0 0 35px;
+  @include delay;
+  img {
+    margin: 0 15px 0 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+  }
 
 }

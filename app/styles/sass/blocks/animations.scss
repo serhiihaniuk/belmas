@@ -16,7 +16,7 @@
   }
 }
 
-.fadeIn{
+.fadeIn {
   animation: fadeIn 3s ease infinite;
   animation-delay: 1s;
 }
@@ -48,6 +48,7 @@
 
   }
 }
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -58,10 +59,56 @@
 
   }
 }
-.bg-rotate-animation{
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  3% {
+    transform: rotate(-35deg);
+  }
+  6% {
+    transform: rotate(35deg);
+  }
+  9% {
+    transform: rotate(-35deg);
+  }
+  12% {
+    transform: rotate(35deg);
+  }
+  15% {
+    transform: rotate(-35deg);
+  }
+  18% {
+    transform: rotate(0deg);
+
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@mixin delay {
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      img {
+        animation-delay: #{$i}s;
+      }
+    }
+  }
+}
+
+.ico-ring-animation {
+  animation: ring 6s linear infinite;
+
+}
+
+
+.bg-rotate-animation {
   animation: rotate 39s linear infinite;
 
 }
+
 .bg-move-animation {
   animation: move 33s linear infinite;
 }
@@ -74,3 +121,4 @@
   animation: move2 46s linear infinite;
 
 }
+
