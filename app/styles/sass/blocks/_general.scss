@@ -4,6 +4,10 @@ html, body {
 body{
   overflow: hidden;
 }
+@font-face {
+  font-display: swap;
+}
+
 .page-wrapper {
   height: 100%;
   width: 100%;
@@ -21,6 +25,7 @@ body{
   overflow: hidden;
   scroll-snap-align: start;
 }
+
 
 $content-width: 1100;
 $bp1: 1200px;
