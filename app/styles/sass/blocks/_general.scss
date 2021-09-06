@@ -4,6 +4,10 @@ html, body {
 body{
   overflow: hidden;
 }
+@font-face {
+  font-display: swap;
+}
+
 .page-wrapper {
   height: 100%;
   width: 100%;
