@@ -43,7 +43,7 @@
 
 .open .book__wrapper {
   transform: translateY(0);
-  border-radius: 0 0 0 0;
+  border-radius: 5px;
   transition: border-radius .5s ease .3s, transform .4s ease-out;
 }
 .book__title{
