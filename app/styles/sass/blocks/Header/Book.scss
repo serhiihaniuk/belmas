@@ -47,13 +47,13 @@
 
 .book__contacts {
   flex: 1 0 100%;
-  transition: transform 1s ease;
+  transition: transform .4s ease;
 }
 
 .book__main {
   margin: 0 40px 0 0;
   flex: 1 0 100%;
-  transition: transform 1s ease;
+  transition: transform .4s ease;
 }
 
 .slide2 .book__main, .slide2 .book__contacts {
