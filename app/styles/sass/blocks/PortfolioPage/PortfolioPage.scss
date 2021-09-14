@@ -63,20 +63,12 @@
   overflow: hidden;
   position: relative;
   box-shadow: 5px 10px 20px -2px rgba(0, 0, 0, 0.3);
-  transform: translateX(25px) scale(.75);
-  opacity: .2;
-  transition: transform, opacity .3s ease;
 
   &:after {
     content: "";
     display: block;
     padding-bottom: 100%;
   }
-}
-
-.active-slide .portfolio-page__img-wrapper--big {
-  transform: scale(1);
-  opacity: 1;
 }
 
 .portfolio-page__img--big {

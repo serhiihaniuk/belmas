@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioImages.forEach(img => {
             img.src = img.dataset.href
         })
-    }, 100)
+    }, 500)
     
 })
+
