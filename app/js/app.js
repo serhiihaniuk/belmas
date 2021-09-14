@@ -46,36 +46,39 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioSlider.scrollTo({left: currentOffset + portfolioSlideWidth, behavior: 'smooth'})
     })
 
+    // const watchSlides = function (entries) {
+    //     entries.forEach((entry) => {
+    //         if (entry.isIntersecting) {
+    //             currentOffset = entry.target.offsetLeft
+    //             entry.target.classList.add('active-slide')
+    //             if (entry.target.offsetLeft === 0) {
+    //                 prevSlideBtn.style.opacity = "0"
+    //                 return
+    //             }
+    //             if (entry.target === portfolioSlide[portfolioSlide.length - 1]) {
+    //                 nextSlideBtn.style.opacity = "0"
+    //                 return
+    //             }
+    //             nextSlideBtn.style.opacity = "1"
+    //             prevSlideBtn.style.opacity = "1"
+    //         } else {
+    //             entry.target.classList.remove('active-slide')
+    //         }
 
-    const watchSlides = function (entries) {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                currentOffset = entry.target.offsetLeft
-                entry.target.classList.add('active-slide')
-                if (entry.target.offsetLeft === 0) {
-                    prevSlideBtn.style.opacity = "0"
-                    return
-                }
-                if (entry.target === portfolioSlide[portfolioSlide.length - 1]) {
-                    nextSlideBtn.style.opacity = "0"
-                    return
-                }
-                nextSlideBtn.style.opacity = "1"
-                prevSlideBtn.style.opacity = "1"
-            } else {
-                entry.target.classList.remove('active-slide')
-            }
+    //     })
+    // };
+    // const sliderObserver = new IntersectionObserver(watchSlides, {
+    //     root: null,
+    //     rootMargin: '0px',
+    //     threshold: .6
+    // });
+    // portfolioSlide.forEach((slide) => {
+    //     sliderObserver.observe(slide)
+    // })
 
-        })
-    };
-    const sliderObserver = new IntersectionObserver(watchSlides, {
-        root: null,
-        rootMargin: '0px',
-        threshold: .6
-    });
-    portfolioSlide.forEach((slide) => {
-        sliderObserver.observe(slide)
-    })
+
+
+
 
     const portfolioImages = document.body.querySelectorAll('.portfolio-page__img--big')
 
@@ -84,6 +87,27 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = img.dataset.href
         })
     }, 500)
+    const priceElement = document.querySelector('.price')
+    const priceScrollbar = document.querySelector('.price__scrollbar')
+    const priceScrollbarThumb = document.querySelector('.price__thumb')
     
+    priceScrollbar.style.height = priceElement.clientHeight + 'px'
+
+    const trottle = (callback)=>{
+        let wait = false
+        return (e) => {
+            if(wait) return 
+            wait = true
+            callback(e)
+            setTimeout(() => wait = false,15)
+        }
+    }
+    priceElement.addEventListener('scroll', trottle((e)=>{
+        const scrollHeight = e.target.scrollHeight - e.target.clientHeight
+        const scrollTop = e.target.scrollTop 
+        const scrollPercent = parseInt(((scrollTop / scrollHeight)*100)) 
+        priceScrollbarThumb.style.top = scrollPercent + '%'
+        priceScrollbarThumb.style.transform = `translateY(-${scrollPercent/2}%)`
+    }))
 })
 

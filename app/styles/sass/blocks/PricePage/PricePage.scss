@@ -36,7 +36,7 @@
   flex: 0 0 auto;
   text-align: center;
   color: $dark;
-  margin: 30px 0;
+  margin: 15px 0;
   position: relative;
   z-index: 5;
 }
@@ -50,6 +50,29 @@
   margin: 0 0 30px;
   position: relative;
   z-index: 5;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.price::-webkit-scrollbar {
+  display: none;
+}
+.price__scrollbar{
+  background-color: tomato;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 5px;
+  z-index: 10;
+  transform: all .005s ease;
+  .price__thumb{
+    width: 5px;
+    background-color: black;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    z-index: 11;
+    transform: translateY(-50%);
+  }
 }
 
 .price__item {
@@ -79,24 +102,7 @@
 .price__time{
   opacity: .6;
 }
-.price::-webkit-scrollbar {
-  width: 5px;
-}
 
-/* Track */
-.price::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-/* Handle */
-.price::-webkit-scrollbar-thumb {
-  background: $bg-dark;
-}
-
-/* Handle on hover */
-.price::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
 .price-page__bg {
   position: absolute;
