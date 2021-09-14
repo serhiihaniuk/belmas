@@ -18,27 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // book popup
     const popupWrapper = document.querySelector(".book")
     const bookButtons = document.querySelectorAll('.open-popup')
-    const openContactsButtons = document.querySelectorAll('.show-contacts')
     bookButtons.forEach((bookButton) => {
         bookButton.addEventListener('click', () => {
-            popupWrapper.classList.remove('slide2')
             popupWrapper.classList.add('open')
-            popupWrapper.classList.add('slide1')
-        })
-    })
-
-    openContactsButtons.forEach((contactsButton) => {
-        contactsButton.addEventListener('click', () => {
-            popupWrapper.classList.add('open')
-            popupWrapper.classList.remove('slide1')
-            popupWrapper.classList.add('slide2')
         })
     })
 
     popupWrapper.addEventListener('click', (e) => {
         if (e.target === popupWrapper) {
             popupWrapper.classList.remove('open')
-            popupWrapper.classList.remove('slide2')
         }
     })
 
@@ -89,5 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderObserver.observe(slide)
     })
 
+    const portfolioImages = document.body.querySelectorAll('.portfolio-page__img--big')
 
+    setTimeout(() => {
+        portfolioImages.forEach(img => {
+            img.src = img.dataset.href
+        })
+    }, 100)
+    
 })
