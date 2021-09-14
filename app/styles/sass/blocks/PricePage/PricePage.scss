@@ -57,16 +57,18 @@
   display: none;
 }
 .price__scrollbar{
-  background-color: tomato;
+  background-color: #DFB6A4;
+  border-radius:5px;
   position: absolute;
-  right: 0;
-  top: 100px;
+  right: 8px;
+  top: 110px;
   width: 5px;
   z-index: 10;
   transform: all .005s ease;
   .price__thumb{
     width: 5px;
-    background-color: black;
+    background-color: $bg-dark;
+    border-radius:5px;
     height: 45px;
     position: absolute;
     top: 0;

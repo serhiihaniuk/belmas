@@ -87,12 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = img.dataset.href
         })
     }, 500)
+    
     const priceElement = document.querySelector('.price')
     const priceScrollbar = document.querySelector('.price__scrollbar')
     const priceScrollbarThumb = document.querySelector('.price__thumb')
+    let scrollHeight;
     
-    priceScrollbar.style.height = priceElement.clientHeight + 'px'
-
+    const scrollResizeHandler = ()=>{
+        priceScrollbar.style.height = priceElement.clientHeight + 'px'
+        scrollHeight = priceElement.scrollHeight - priceElement.clientHeight
+    }
+    scrollResizeHandler()
+    window.addEventListener('resize', scrollResizeHandler)
+    
     const trottle = (callback)=>{
         let wait = false
         return (e) => {
@@ -103,11 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     priceElement.addEventListener('scroll', trottle((e)=>{
-        const scrollHeight = e.target.scrollHeight - e.target.clientHeight
         const scrollTop = e.target.scrollTop 
         const scrollPercent = parseInt(((scrollTop / scrollHeight)*100)) 
         priceScrollbarThumb.style.top = scrollPercent + '%'
-        priceScrollbarThumb.style.transform = `translateY(-${scrollPercent/2}%)`
+        priceScrollbarThumb.style.transform = `translateY(-${scrollPercent/1.25}%)`
     }))
 })
 
