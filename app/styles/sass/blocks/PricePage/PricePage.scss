@@ -64,7 +64,8 @@
   top: 110px;
   width: 5px;
   z-index: 10;
-  transform: all .005s ease;
+  transform: all .1s ease;
+  overflow: hidden;
   .price__thumb{
     width: 5px;
     background-color: $bg-dark;
