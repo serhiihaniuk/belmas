@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //utils 
+    const trottle = (callback)=>{
+        let wait = false
+        return (e) => {
+            if(wait) return 
+            wait = true
+            callback(e)
+            setTimeout(() => wait = false,8)
+        }
+    }
+    //utils
 
+    //main
     const menuItem = document.getElementById("nav-icon3")
     const menu = document.querySelector(".menu")
     menuItem.addEventListener("click", () => {
@@ -100,15 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollResizeHandler()
     window.addEventListener('resize', scrollResizeHandler)
     
-    const trottle = (callback)=>{
-        let wait = false
-        return (e) => {
-            if(wait) return 
-            wait = true
-            callback(e)
-            setTimeout(() => wait = false,15)
-        }
-    }
+    
     priceElement.addEventListener('scroll', trottle((e)=>{
         const scrollTop = e.target.scrollTop 
         const scrollPercent = parseInt(((scrollTop / scrollHeight)*100)) 
