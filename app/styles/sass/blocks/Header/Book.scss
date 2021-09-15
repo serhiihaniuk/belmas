@@ -31,23 +31,17 @@
   max-width: 420px;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
-  flex-direction: row;
   margin: 0 auto;
-  padding: 20px 25px 45px;
+  padding: 20px 25px 25px;
   position: relative;
   z-index: 65;
   border-radius: 3% 3% 20% 20%;
   transform: translateY(-55%);
   transition: border-radius .5s ease .3s, transform .4s ease-out;
   box-shadow: 5px 10px 25px -2px rgba(0, 0, 0, 0.4);
-  overflow-y: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  @media screen and(max-height: $minHeightBreakpoint){
+  overflow-x: hidden;
+  overflow-y: auto;
+  @media screen and(max-height: $smallMobileHeightBreakpoint){
     padding: 5px;
   }
 }
@@ -89,24 +83,23 @@
   flex-direction: column;
   flex: 1 0 100%;
   justify-content: flex-start;
-  gap: 20px;
-  @media screen and(max-height: $minHeightBreakpoint){
-    gap: 10px;
-  }
+  
+  
 }
 
 .book__item {
   font-size: 18px;
   font-weight: bold;
   padding: 0 0 0 25px;
-  @media screen and(max-height: $minHeightBreakpoint){
+  margin: 0px 0px 20px 0px;
+  @media screen and(max-height: $smallMobileHeightBreakpoint){
     font-size: 16px;
     margin: 0px 0px 10px 0px;
   }
   @include delay;
   img {
     margin: 0 15px 0 0;
-    @media screen and(max-height: $minHeightBreakpoint){
+    @media screen and(max-height: $smallMobileHeightBreakpoint){
       font-size: 16px;
       height: 20px;
       width: 20px;

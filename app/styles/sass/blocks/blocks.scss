@@ -42,11 +42,12 @@
 }
 .social {
     display: flex;
-    gap: 20px;
+    
     align-items: center;
 }
 
 .social__img {
+    margin: 0px 20px 0px 0px;
     width: 30px;
     height: 30px;
 }
