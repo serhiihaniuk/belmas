@@ -65,17 +65,17 @@
   top: 110px;
   width: 5px;
   z-index: 10;
-  transform: all .1s ease;
+  transform: all 1s ease;
   overflow: hidden;
   .price__thumb{
     width: 5px;
     background-color: $bg-dark;
-    border-radius:5px;
+    border-radius:6px;
     height: 45px;
     position: absolute;
     top: 0%;
     z-index: 11;
-   
+  
   }
 }
 
