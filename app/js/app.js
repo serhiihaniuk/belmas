@@ -107,27 +107,27 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }, 500)
 
-    const priceElement = document.querySelector('.price')
-    const priceScrollbar = document.querySelector('.price__scrollbar')
-    const priceScrollbarThumb = document.querySelector('.price__thumb')
-    let scrollHeight
+    // const priceElement = document.querySelector('.price')
+    // const priceScrollbar = document.querySelector('.price__scrollbar')
+    // const priceScrollbarThumb = document.querySelector('.price__thumb')
+    // let scrollHeight
 
-    const scrollResizeHandler = () => {
-        setTimeout(() => {
-            priceScrollbar.style.height = priceElement.clientHeight + 'px'
-            scrollHeight = priceElement.scrollHeight - priceElement.clientHeight
-        }, 30)
-    }
-    scrollResizeHandler()
-    window.addEventListener('resize', scrollResizeHandler)
+    // const scrollResizeHandler = () => {
+    //     setTimeout(() => {
+    //         priceScrollbar.style.height = priceElement.clientHeight + 'px'
+    //         scrollHeight = priceElement.scrollHeight - priceElement.clientHeight
+    //     }, 30)
+    // }
+    // scrollResizeHandler()
+    // window.addEventListener('resize', scrollResizeHandler)
 
-    priceElement.addEventListener(
-        'scroll',
-        throttle((e) => {
-            const scrollTop = e.target.scrollTop
-            const scrollPercent = parseInt((scrollTop / scrollHeight) * 100)
-            priceScrollbarThumb.style.top = scrollPercent + '%'
-            priceScrollbarThumb.style.transform = `translateY(-${scrollPercent}%)`
-        }, 5)
-    )
+    // priceElement.addEventListener(
+    //     'scroll',
+    //     throttle((e) => {
+    //         const scrollTop = e.target.scrollTop
+    //         const scrollPercent = parseInt((scrollTop / scrollHeight) * 100)
+    //         priceScrollbarThumb.style.top = scrollPercent + '%'
+    //         priceScrollbarThumb.style.transform = `translateY(-${scrollPercent}%)`
+    //     }, 5)
+    // )
 })
