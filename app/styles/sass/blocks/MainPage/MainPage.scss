@@ -60,13 +60,14 @@
     top: -227px;
     right: -177px;
     pointer-events: none;
-    animation: move 21s linear infinite 1s;
+    animation: move 21s linear infinite 1s, appear 1s ease .2s backwards;
+    
 }
 
 .main-page__bg--4 {
     bottom: -208%;
     left: -232%;
-    animation: move 33s linear infinite;
+    animation: move 33s linear infinite,  appear 1s ease .2s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         bottom: -0%;
         left: -0%;
@@ -77,9 +78,9 @@
     margin: 10px 0 60px 0;
     position: relative;
     z-index: 5;
-
     width: 246px;
     height: 287px;
+    animation: appear 1s ease .4s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         width: 200px;
         height: 210px;
@@ -89,6 +90,7 @@
 .main-page__btn {
     width: 245px;
     height: 46px;
+    animation: appear 1s ease 1s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         width: 225px;
         height: 36px;
@@ -200,5 +202,16 @@
     }
     100% {
         transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+
+
+    }
+    100% {
+        opacity: 1;
     }
 }
