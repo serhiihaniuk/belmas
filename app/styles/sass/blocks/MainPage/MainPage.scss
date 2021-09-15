@@ -101,11 +101,11 @@
 .svg-animated {
     stroke-dasharray: 550;
     stroke-dashoffset: 0;
-    animation: dash 19s ease-in-out infinite 2s backwards;
+    animation: dash 28s ease-in-out infinite 2s backwards;
 }
 .svg-animated2 {
     stroke-dasharray: 850;
-    stroke-dashoffset: 860;
+    stroke-dashoffset: 840;
     animation: dash2 41s linear infinite backwards 3s;
 }
 
@@ -119,19 +119,19 @@
         stroke: #ffe2e2;
     }
 
-    8% {
-        stroke-dashoffset: -550;
-        stroke: #ffe2e2;
-    }
     10% {
         stroke-dashoffset: -550;
         stroke: #ffe2e2;
     }
     15% {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: -550;
         stroke: #ffe2e2;
     }
     20% {
+        stroke-dashoffset: 0;
+        stroke: #ffe2e2;
+    }
+    25% {
         stroke-dashoffset: 0;
         stroke: #ffe2e2;
     }
@@ -159,8 +159,12 @@
         stroke-dashoffset: 550;
         stroke: #ffe2e2;
     }
-    100% {
+    95%{
         stroke-dashoffset: 0;
+        stroke: #ffe2e2;
+    }
+    100% {
+        stroke-dashoffset: 550;
         stroke: #ffe2e2;
     }
 }
@@ -172,30 +176,27 @@
         stroke-dashoffset: 840;
         stroke: $dark;
     }
-    3% {
+    5% {
         stroke-dashoffset: 0;
         stroke: $dark;
-    }
-    5% {
-        stroke-dashoffset: -870;
-        stroke: $bg-semi-light;
     }
     7% {
         stroke-dashoffset: -870;
         stroke: $bg-semi-light;
     }
     9% {
+        stroke-dashoffset: -870;
+        stroke: $bg-semi-light;
+    }
+    11% {
         stroke-dashoffset: 0;
         stroke: #f5e8c7;
     }
-    11% {
+    13% {
         stroke-dashoffset: 850;
         stroke: #f5e8c7;
     }
-    13% {
-        stroke-dashoffset: 1710;
-        stroke: #deba9d;
-    }
+    
     15% {
         stroke-dashoffset: 1710;
         stroke: #deba9d;
@@ -221,7 +222,7 @@
         stroke: #ffbcbc;
     }
     100% {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 840;
         stroke: #f5e8c7;
     }
 }
