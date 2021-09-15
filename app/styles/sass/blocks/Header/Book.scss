@@ -41,7 +41,14 @@
   transition: border-radius .5s ease .3s, transform .4s ease-out;
   box-shadow: 5px 10px 25px -2px rgba(0, 0, 0, 0.4);
   overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
+
+
 
 .open .book__wrapper {
   transform: translateY(0);
