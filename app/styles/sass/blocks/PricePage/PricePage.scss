@@ -30,7 +30,7 @@
   letter-spacing: 1.1px;
   position: relative;
   z-index: 5;
-  @media screen and(max-height: $minHeightBreakpoint){
+  @media screen and(max-height: $smallMobileHeightBreakpoint){
     font-size: 16px;
   }
 }
@@ -42,7 +42,9 @@
   margin: 15px 0;
   position: relative;
   z-index: 5;
-  @include lowHeightDisplayNone;
+  @media screen and(max-height: $smallMobileHeightBreakpoint){
+    display: none;
+  }
 }
 
 .price {
@@ -70,7 +72,7 @@
   z-index: 10;
   transform: all 1s ease;
   overflow: hidden;
-  @media screen and(max-height: $minHeightBreakpoint){
+  @media screen and(max-height: $smallMobileHeightBreakpoint){
     top: 40px;
   }
 

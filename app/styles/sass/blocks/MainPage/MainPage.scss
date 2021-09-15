@@ -1,217 +1,204 @@
 .main-page {
-  background-color: $bg-light;
-  padding: 55px 0 5px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  @include lowHeightDisplayNone;
-
+    background-color: $bg-light;
+    padding: 55px 0 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    @include lowHeightDisplayNone;
 }
 
 .main-page__wrapper {
-  padding: 0 0 25px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-  flex: 1 0 auto;
+    padding: 0 0 25px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1 0 auto;
 }
 
 .main-page__logo {
-  position: relative;
+    position: relative;
 }
-.main-page__next-page{
-  width: 100%;
-  max-width: 500px;
-  height: 35px;
-  position: relative;
-  z-index: 5;
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 auto;
-  padding: 0 25px;
+.main-page__next-page {
+    width: 100%;
+    max-width: 500px;
+    height: 35px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    padding: 0 25px;
 }
 .main-page__bg {
-  position: absolute;
-  pointer-events: none;
-
+    position: absolute;
+    pointer-events: none;
 }
 
 .main-page__bg--1 {
-  bottom: -50%;
-  height: 300px;
-  left: -32px;
-  z-index: 1;
-  pointer-events: none;
-
+    bottom: -50%;
+    height: 300px;
+    left: -32px;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .main-page__bg--2 {
-  height: 200px;
-  right: -45%;
-  top: -44%;
-  z-index: 1;
-  pointer-events: none;
-
+    height: 200px;
+    right: -45%;
+    top: -44%;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .main-page__bg--3 {
-  top: -227px;
-  right: -177px;
-  pointer-events: none;
-  animation: move 21s linear infinite 1s;
-
-
+    top: -227px;
+    right: -177px;
+    pointer-events: none;
+    animation: move 21s linear infinite 1s;
 }
-
 
 .main-page__bg--4 {
-  bottom: -208%;
-  left: -232%;
-  animation: move 33s linear infinite;
-
+    bottom: -208%;
+    left: -232%;
+    animation: move 33s linear infinite;
+    @media screen and(max-height: $smallMobileHeightBreakpoint) {
+        bottom: -0%;
+        left: -0%;
+    }
 }
-
 
 .logo {
-  margin: 0 0 60px 0;
-  position: relative;
-  z-index: 5;
+    margin: 10px 0 60px 0;
+    position: relative;
+    z-index: 5;
+
+    width: 246px;
+    height: 287px;
+    @media screen and(max-height: $smallMobileHeightBreakpoint) {
+        width: 200px;
+        height: 210px;
+        margin: 10px 0 20px 0;
+    }
 }
-.main-page__btn{
-  width: 245px;
-  height: 46px;
+.main-page__btn {
+    width: 245px;
+    height: 46px;
+    @media screen and(max-height: $smallMobileHeightBreakpoint) {
+        width: 225px;
+        height: 36px;
+    }
 }
-.svg-animated{
-  stroke-dasharray: 550;
-  stroke-dashoffset: 0;
-  animation: dash 19s ease-in-out infinite 1s;
+.svg-animated {
+    stroke-dasharray: 550;
+    stroke-dashoffset: 0;
+    animation: dash 19s ease-in-out infinite 1s;
 }
-.svg-animated2{
-  stroke-dasharray: 850;
-  stroke-dashoffset: 0;
-  animation: dash2 41s linear infinite;
+.svg-animated2 {
+    stroke-dasharray: 850;
+    stroke-dashoffset: 0;
+    animation: dash2 41s linear infinite;
 }
 
 @keyframes dash {
-  0% {
-    stroke-dashoffset: 0;
-    stroke: #FFE2E2;
-
-  }
-  5%{
-    stroke-dashoffset: 550;
-    stroke: #FFE2E2;
-
-
-  }
-  10% {
-    stroke-dashoffset: 1100;
-    stroke: #FFE2E2;
-
-  }
-  15%{
-    stroke-dashoffset: 1100;
-    stroke: #FFE2E2;
-
-  }
-  60%{
-    stroke-dashoffset: 1650;
-    stroke: #FFBCBC;
-
-  }
-  65%{
-    stroke-dashoffset: 1650;
-    stroke: #FFBCBC;
-
-  }
-  75% {
-    stroke-dashoffset: 1100;
-    stroke: #FFBCBC;
-
-  }
-  80% {
-    stroke-dashoffset: 1100;
-    stroke: #FFBCBC;
-
-  }
-  85% {
-    stroke-dashoffset: 550;
-    stroke: #FFE2E2;
-
-  }
-  100% {
-    stroke-dashoffset: 0;
-    stroke: #FFE2E2;
-
-  }
+    0% {
+        stroke-dashoffset: 0;
+        stroke: #ffe2e2;
+    }
+    5% {
+        stroke-dashoffset: 550;
+        stroke: #ffe2e2;
+    }
+    10% {
+        stroke-dashoffset: 1100;
+        stroke: #ffe2e2;
+    }
+    15% {
+        stroke-dashoffset: 1100;
+        stroke: #ffe2e2;
+    }
+    60% {
+        stroke-dashoffset: 1650;
+        stroke: #ffbcbc;
+    }
+    65% {
+        stroke-dashoffset: 1650;
+        stroke: #ffbcbc;
+    }
+    75% {
+        stroke-dashoffset: 1100;
+        stroke: #ffbcbc;
+    }
+    80% {
+        stroke-dashoffset: 1100;
+        stroke: #ffbcbc;
+    }
+    85% {
+        stroke-dashoffset: 550;
+        stroke: #ffe2e2;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        stroke: #ffe2e2;
+    }
 }
 
 @keyframes dash2 {
-  0% {
-    stroke-dashoffset: 0;
-    stroke: #F5E8C7;
-
-  }
-  5%{
-    stroke-dashoffset: 850;
-    stroke: #F5E8C7;
-
-
-  }
-  10% {
-    stroke-dashoffset: 1710;
-    stroke: #DEBA9D;
-  }
-  15%{
-    stroke-dashoffset: 1710;
-    stroke: #DEBA9D;
-
-  }
-  60%{
-    stroke-dashoffset: 850;
-    stroke: #F9F9F9;
-
-  }
-  65%{
-    stroke-dashoffset: 850;
-    stroke: #F9F9F9;
-
-  }
-  75% {
-    stroke-dashoffset: 1710;
-    stroke: #FFBCBC;
-
-  }
-  80% {
-    stroke-dashoffset: 1710;
-    stroke: #FFBCBC;
-
-  }
-  85% {
-    stroke-dashoffset: 850;
-  stroke: #FFBCBC;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    stroke: #F5E8C7;
-
-  }
+    0% {
+        stroke-dashoffset: 0;
+        stroke: #f5e8c7;
+    }
+    5% {
+        stroke-dashoffset: 850;
+        stroke: #f5e8c7;
+    }
+    10% {
+        stroke-dashoffset: 1710;
+        stroke: #deba9d;
+    }
+    15% {
+        stroke-dashoffset: 1710;
+        stroke: #deba9d;
+    }
+    60% {
+        stroke-dashoffset: 850;
+        stroke: #f9f9f9;
+    }
+    65% {
+        stroke-dashoffset: 850;
+        stroke: #f9f9f9;
+    }
+    75% {
+        stroke-dashoffset: 1710;
+        stroke: #ffbcbc;
+    }
+    80% {
+        stroke-dashoffset: 1710;
+        stroke: #ffbcbc;
+    }
+    85% {
+        stroke-dashoffset: 850;
+        stroke: #ffbcbc;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        stroke: #f5e8c7;
+    }
 }
 
 @keyframes move {
-  0% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-50% {
-  transform: translate(25px, 25px) rotate(6deg);
-}
-  100% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    50% {
+        transform: translate(25px, 25px) rotate(6deg);
+    }
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
 }

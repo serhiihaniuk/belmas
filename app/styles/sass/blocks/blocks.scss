@@ -11,6 +11,10 @@
     font-weight: normal;
     position: relative;
     z-index: 5;
+    @media screen and(max-height: $smallMobileHeightBreakpoint){
+        padding: 5px;
+        font-size: 14px;
+      }
 }
 .btn-arrow {
     background-color: transparent;
