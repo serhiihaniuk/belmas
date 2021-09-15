@@ -60,14 +60,16 @@
     top: -227px;
     right: -177px;
     pointer-events: none;
-    animation: move 21s linear infinite 1s, appear 1s ease .2s backwards;
+    animation: move 21s linear infinite 1s, appear 3s ease .2s backwards;
     
 }
 
 .main-page__bg--4 {
-    bottom: -208%;
-    left: -232%;
-    animation: move 33s linear infinite,  appear 1s ease .2s backwards;
+    bottom: -83%;
+    left: -76%;
+    width: 450px;
+    height: 450px;
+    animation: move 33s linear infinite,  appear 3s ease .2s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         bottom: -0%;
         left: -0%;
