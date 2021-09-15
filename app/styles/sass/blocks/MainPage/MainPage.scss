@@ -51,7 +51,7 @@
 .main-page__bg--2 {
     height: 200px;
     right: -45%;
-    top: -44%;
+    top: -54%;
     z-index: 2;
     pointer-events: none;
 }
@@ -60,7 +60,7 @@
     top: -227px;
     right: -177px;
     pointer-events: none;
-    animation: move 21s linear infinite 1s, appear 3s ease .2s backwards;
+    animation: move 21s linear infinite 1s , appear 3s ease .2s backwards;
     z-index: 1;
 }
 
@@ -69,7 +69,7 @@
     left: -76%;
     width: 450px;
     height: 491px;
-    animation: move 33s linear infinite,  appear 3s ease .2s backwards;
+    animation: move 33s linear infinite  1s,  appear 3s ease .3s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         bottom: -165%;
         left: -154%;
@@ -82,7 +82,7 @@
     z-index: 5;
     width: 246px;
     height: 263px;
-    animation: appear 1s ease .4s backwards;
+    animation: appear 1s ease 1s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         width: 200px;
         height: 210px;
@@ -92,7 +92,7 @@
 .main-page__btn {
     width: 245px;
     height: 46px;
-    animation: appear 1s ease 1s backwards;
+    animation: appear 1s ease 1.5s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         width: 225px;
         height: 36px;
@@ -101,28 +101,41 @@
 .svg-animated {
     stroke-dasharray: 550;
     stroke-dashoffset: 0;
-    animation: dash 19s ease-in-out infinite 1s;
+    animation: dash 19s ease-in-out infinite 2s backwards;
 }
 .svg-animated2 {
     stroke-dasharray: 850;
-    stroke-dashoffset: 0;
-    animation: dash2 41s linear infinite;
+    stroke-dashoffset: 860;
+    animation: dash2 41s linear infinite backwards 3s;
 }
 
 @keyframes dash {
     0% {
-        stroke-dashoffset: 0;
-        stroke: #ffe2e2;
-    }
-    5% {
         stroke-dashoffset: 550;
         stroke: #ffe2e2;
     }
+    5% {
+        stroke-dashoffset: 0;
+        stroke: #ffe2e2;
+    }
+
+    8% {
+        stroke-dashoffset: -550;
+        stroke: #ffe2e2;
+    }
     10% {
-        stroke-dashoffset: 1100;
+        stroke-dashoffset: -550;
         stroke: #ffe2e2;
     }
     15% {
+        stroke-dashoffset: 0;
+        stroke: #ffe2e2;
+    }
+    20% {
+        stroke-dashoffset: 0;
+        stroke: #ffe2e2;
+    }
+    30% {
         stroke-dashoffset: 1100;
         stroke: #ffe2e2;
     }
@@ -153,15 +166,33 @@
 }
 
 @keyframes dash2 {
+   
+   
     0% {
+        stroke-dashoffset: 840;
+        stroke: $dark;
+    }
+    3% {
+        stroke-dashoffset: 0;
+        stroke: $dark;
+    }
+    5% {
+        stroke-dashoffset: -870;
+        stroke: $bg-semi-light;
+    }
+    7% {
+        stroke-dashoffset: -870;
+        stroke: $bg-semi-light;
+    }
+    9% {
         stroke-dashoffset: 0;
         stroke: #f5e8c7;
     }
-    5% {
+    11% {
         stroke-dashoffset: 850;
         stroke: #f5e8c7;
     }
-    10% {
+    13% {
         stroke-dashoffset: 1710;
         stroke: #deba9d;
     }
