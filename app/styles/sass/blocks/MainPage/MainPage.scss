@@ -44,7 +44,7 @@
     bottom: -50%;
     height: 300px;
     left: -32px;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
 }
 
@@ -52,7 +52,7 @@
     height: 200px;
     right: -45%;
     top: -44%;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
 }
 
@@ -61,7 +61,7 @@
     right: -177px;
     pointer-events: none;
     animation: move 21s linear infinite 1s, appear 3s ease .2s backwards;
-    
+    z-index: 1;
 }
 
 .main-page__bg--4 {
@@ -71,8 +71,8 @@
     height: 491px;
     animation: move 33s linear infinite,  appear 3s ease .2s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
-        bottom: -0%;
-        left: -0%;
+        bottom: -165%;
+        left: -154%;
     }
 }
 
