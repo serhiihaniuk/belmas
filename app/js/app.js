@@ -1,34 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-    //utils 
-    const trottle = (callback)=>{
+    //utils
+
+    const trottle = (callback, timeout) => {
         let wait = false
         return (e) => {
-            if(wait) return 
+            if (wait) return
             wait = true
             callback(e)
-            setTimeout(() => wait = false,8)
+            setTimeout(() => (wait = false), timeout)
         }
     }
+
     //utils
 
     //main
-    const menuItem = document.getElementById("nav-icon3")
-    const menu = document.querySelector(".menu")
-    menuItem.addEventListener("click", () => {
-        menuItem.classList.toggle("open")
-        menu.classList.toggle("open")
+    const menuItem = document.getElementById('nav-icon3')
+    const menu = document.querySelector('.menu')
+    menuItem.addEventListener('click', () => {
+        menuItem.classList.toggle('open')
+        menu.classList.toggle('open')
     })
 
     //menu links
     const menuLinks = document.querySelectorAll('.menu__item')
     menuLinks.forEach((link) => {
         link.addEventListener('click', () => {
-            menu.classList.remove("open")
-            menuItem.classList.remove("open")
+            menu.classList.remove('open')
+            menuItem.classList.remove('open')
         })
     })
     // book popup
-    const popupWrapper = document.querySelector(".book")
+    const popupWrapper = document.querySelector('.book')
     const bookButtons = document.querySelectorAll('.open-popup')
     bookButtons.forEach((bookButton) => {
         bookButton.addEventListener('click', () => {
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //slider
 
-    const portfolioSlider = document.querySelector(".portfolio-page__slider")
+    const portfolioSlider = document.querySelector('.portfolio-page__slider')
     const portfolioSlide = document.querySelectorAll('.portfolio-page__slide')
     const portfolioSlideWidth = portfolioSlide[0].offsetWidth
     const prevSlideBtn = document.querySelector('#slider__prev')
@@ -52,10 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentOffset = 0
 
     prevSlideBtn.addEventListener('click', () => {
-        portfolioSlider.scrollTo({left: currentOffset - portfolioSlideWidth, behavior: 'smooth'})
+        portfolioSlider.scrollTo({
+            left: currentOffset - portfolioSlideWidth,
+            behavior: 'smooth',
+        })
     })
     nextSlideBtn.addEventListener('click', () => {
-        portfolioSlider.scrollTo({left: currentOffset + portfolioSlideWidth, behavior: 'smooth'})
+        portfolioSlider.scrollTo({
+            left: currentOffset + portfolioSlideWidth,
+            behavior: 'smooth',
+        })
     })
 
     const watchSlides = function (entries) {
@@ -64,60 +72,62 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentOffset = entry.target.offsetLeft
                 entry.target.classList.add('active-slide')
                 if (entry.target.offsetLeft === 0) {
-                    prevSlideBtn.style.opacity = "0"
+                    prevSlideBtn.style.opacity = '0'
                     return
                 }
-                if (entry.target === portfolioSlide[portfolioSlide.length - 1]) {
-                    nextSlideBtn.style.opacity = "0"
+                if (
+                    entry.target === portfolioSlide[portfolioSlide.length - 1]
+                ) {
+                    nextSlideBtn.style.opacity = '0'
                     return
                 }
-                nextSlideBtn.style.opacity = "1"
-                prevSlideBtn.style.opacity = "1"
+                nextSlideBtn.style.opacity = '1'
+                prevSlideBtn.style.opacity = '1'
             } else {
                 entry.target.classList.remove('active-slide')
             }
-
         })
-    };
+    }
     const sliderObserver = new IntersectionObserver(watchSlides, {
         root: null,
         rootMargin: '0px',
-        threshold: .6
-    });
+        threshold: 0.6,
+    })
     portfolioSlide.forEach((slide) => {
         sliderObserver.observe(slide)
     })
 
-
-
-
-
-    const portfolioImages = document.body.querySelectorAll('.portfolio-page__img--big')
+    const portfolioImages = document.body.querySelectorAll(
+        '.portfolio-page__img--big'
+    )
 
     setTimeout(() => {
-        portfolioImages.forEach(img => {
+        portfolioImages.forEach((img) => {
             img.src = img.dataset.href
         })
     }, 500)
-    
+
     const priceElement = document.querySelector('.price')
     const priceScrollbar = document.querySelector('.price__scrollbar')
     const priceScrollbarThumb = document.querySelector('.price__thumb')
-    let scrollHeight;
-    
-    const scrollResizeHandler = ()=>{
-        priceScrollbar.style.height = priceElement.clientHeight + 'px'
-        scrollHeight = priceElement.scrollHeight - priceElement.clientHeight
+    let scrollHeight
+
+    const scrollResizeHandler = () => {
+        setTimeout(() => {
+            priceScrollbar.style.height = priceElement.clientHeight + 'px'
+            scrollHeight = priceElement.scrollHeight - priceElement.clientHeight
+        }, 30)
     }
     scrollResizeHandler()
     window.addEventListener('resize', scrollResizeHandler)
-    
-    
-    priceElement.addEventListener('scroll', trottle((e)=>{
-        const scrollTop = e.target.scrollTop 
-        const scrollPercent = parseInt(((scrollTop / scrollHeight)*100)) 
-        priceScrollbarThumb.style.top = scrollPercent + '%'
-        priceScrollbarThumb.style.transform = `translateY(-${scrollPercent}%)`
-    }))
-})
 
+    priceElement.addEventListener(
+        'scroll',
+        trottle((e) => {
+            const scrollTop = e.target.scrollTop
+            const scrollPercent = parseInt((scrollTop / scrollHeight) * 100)
+            priceScrollbarThumb.style.top = scrollPercent + '%'
+            priceScrollbarThumb.style.transform = `translateY(-${scrollPercent}%)`
+        }, 5)
+    )
+})
