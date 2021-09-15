@@ -3,6 +3,7 @@
   padding: 55px 0 5px;
   display: flex;
   flex-direction: column;
+  @include lowHeightDisplayNone;
 }
 
 .portfolio-page__wrapper {

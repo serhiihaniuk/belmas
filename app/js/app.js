@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     //utils
 
-    const trottle = (callback, timeout) => {
+    const throttle = (callback, timeout) => {
         let wait = false
         return (e) => {
             if (wait) return
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     priceElement.addEventListener(
         'scroll',
-        trottle((e) => {
+        throttle((e) => {
             const scrollTop = e.target.scrollTop
             const scrollPercent = parseInt((scrollTop / scrollHeight) * 100)
             priceScrollbarThumb.style.top = scrollPercent + '%'
