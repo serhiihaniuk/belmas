@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //utils 
+    const trottle = (callback)=>{
+        let wait = false
+        return (e) => {
+            if(wait) return 
+            wait = true
+            callback(e)
+            setTimeout(() => wait = false,8)
+        }
+    }
+    //utils
 
+    //main
     const menuItem = document.getElementById("nav-icon3")
     const menu = document.querySelector(".menu")
     menuItem.addEventListener("click", () => {
@@ -18,27 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // book popup
     const popupWrapper = document.querySelector(".book")
     const bookButtons = document.querySelectorAll('.open-popup')
-    const openContactsButtons = document.querySelectorAll('.show-contacts')
     bookButtons.forEach((bookButton) => {
         bookButton.addEventListener('click', () => {
-            popupWrapper.classList.remove('slide2')
             popupWrapper.classList.add('open')
-            popupWrapper.classList.add('slide1')
-        })
-    })
-
-    openContactsButtons.forEach((contactsButton) => {
-        contactsButton.addEventListener('click', () => {
-            popupWrapper.classList.add('open')
-            popupWrapper.classList.remove('slide1')
-            popupWrapper.classList.add('slide2')
         })
     })
 
     popupWrapper.addEventListener('click', (e) => {
         if (e.target === popupWrapper) {
             popupWrapper.classList.remove('open')
-            popupWrapper.classList.remove('slide2')
         }
     })
 
@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     nextSlideBtn.addEventListener('click', () => {
         portfolioSlider.scrollTo({left: currentOffset + portfolioSlideWidth, behavior: 'smooth'})
     })
-
 
     const watchSlides = function (entries) {
         entries.forEach((entry) => {
@@ -90,4 +89,35 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
+
+
+
+    const portfolioImages = document.body.querySelectorAll('.portfolio-page__img--big')
+
+    setTimeout(() => {
+        portfolioImages.forEach(img => {
+            img.src = img.dataset.href
+        })
+    }, 500)
+    
+    const priceElement = document.querySelector('.price')
+    const priceScrollbar = document.querySelector('.price__scrollbar')
+    const priceScrollbarThumb = document.querySelector('.price__thumb')
+    let scrollHeight;
+    
+    const scrollResizeHandler = ()=>{
+        priceScrollbar.style.height = priceElement.clientHeight + 'px'
+        scrollHeight = priceElement.scrollHeight - priceElement.clientHeight
+    }
+    scrollResizeHandler()
+    window.addEventListener('resize', scrollResizeHandler)
+    
+    
+    priceElement.addEventListener('scroll', trottle((e)=>{
+        const scrollTop = e.target.scrollTop 
+        const scrollPercent = parseInt(((scrollTop / scrollHeight)*100)) 
+        priceScrollbarThumb.style.top = scrollPercent + '%'
+        priceScrollbarThumb.style.transform = `translateY(-${scrollPercent}%)`
+    }))
 })
+

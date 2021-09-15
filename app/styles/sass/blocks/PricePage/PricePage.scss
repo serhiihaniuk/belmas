@@ -31,14 +31,16 @@
   position: relative;
   z-index: 5;
 }
-.price-page__description{
+
+.price-page__description {
   flex: 0 0 auto;
   text-align: center;
   color: $dark;
-  margin: 30px 0 ;
+  margin: 15px 0;
   position: relative;
   z-index: 5;
 }
+
 .price {
   display: flex;
   flex-direction: column;
@@ -48,6 +50,33 @@
   margin: 0 0 30px;
   position: relative;
   z-index: 5;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.price::-webkit-scrollbar {
+  display: none;
+}
+.price__scrollbar{
+  background: linear-gradient(0deg, rgba(252,245,238,0) 0%, rgba(252,245,238,0.7) 16%, rgba(223,182,164,1) 50%, rgba(252,245,238,0.7) 88%, rgba(252,245,238,0) 100%);
+  
+  border-radius:5px;
+  position: absolute;
+  right: 8px;
+  top: 110px;
+  width: 5px;
+  z-index: 10;
+  transform: all 1s ease;
+  overflow: hidden;
+  .price__thumb{
+    width: 5px;
+    background-color: $bg-dark;
+    border-radius:6px;
+    height: 45px;
+    position: absolute;
+    top: 0%;
+    z-index: 11;
+  
+  }
 }
 
 .price__item {
@@ -58,54 +87,49 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.price__name{
+
+.price__name {
   font-size: 16px;
+  flex: 0 0 80%;
+
+  span {
+    font-size: 12px;
+  }
 }
 
-.price__duration{
-  flex: 0 0 100%;
-  font-size: 12px;
+.price__price {
+  FLEX: 0 0 20%;
+  text-align: right;
 }
 
-.price::-webkit-scrollbar {
-  width: 5px;
+
+.price__time{
+  opacity: .6;
 }
 
-/* Track */
-.price::-webkit-scrollbar-track {
-  background: #fff;
-}
 
-/* Handle */
-.price::-webkit-scrollbar-thumb {
-  background: $bg-dark;
-}
-
-/* Handle on hover */
-.price::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 .price-page__bg {
   position: absolute;
   z-index: 0;
 }
 
-.price-page__bg--1{
+.price-page__bg--1 {
   top: -50px;
   left: 250px;
 }
 
-.price-page__bg--2{
+.price-page__bg--2 {
   bottom: -200px;
   right: 0;
 
 }
 
-.price-page__bg--3{
+.price-page__bg--3 {
   bottom: -50px;
   z-index: 3;
 }
-.price-page__bg--4{
+
+.price-page__bg--4 {
   top: -50px;
   z-index: 3;
 }
