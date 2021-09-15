@@ -68,7 +68,7 @@
     bottom: -83%;
     left: -76%;
     width: 450px;
-    height: 450px;
+    height: 491px;
     animation: move 33s linear infinite,  appear 3s ease .2s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         bottom: -0%;
@@ -81,7 +81,7 @@
     position: relative;
     z-index: 5;
     width: 246px;
-    height: 287px;
+    height: 263px;
     animation: appear 1s ease .4s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         width: 200px;
