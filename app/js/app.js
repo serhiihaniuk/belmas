@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		runPortfolioSlider();
 		insertPortfolioImages();
         runBookButtons()
-	}, 200);
+	}, 1000);
 
 	const insertPortfolioImages = () => {
 		setTimeout(() => {
