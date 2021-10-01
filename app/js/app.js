@@ -3,9 +3,21 @@ import { portfolioPage } from './lazyHtml';
 document.addEventListener('DOMContentLoaded', () => {
 	const bodyHeight = document.body.offsetHeight;
 	const pageWrapppers = document.body.querySelectorAll('.swiper-slide');
-	pageWrapppers.forEach((page)=>{
-		page.style.height = `${bodyHeight}px`
-	})
+	pageWrapppers.forEach((page) => {
+		page.style.height = `${bodyHeight}px`;
+	});
+
+	const debounce = (callback, tm) => {
+		let timeout;
+
+		return (e) => {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => {
+				callback(e);
+			}, tm);
+		};
+	};
+
 	//utils
 	const trottle = (callback) => {
 		let wait = false;
@@ -16,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			setTimeout(() => (wait = false), 8);
 		};
 	};
+
 	//utils
 
 	//main
@@ -108,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		scrollHeight = priceElement.scrollHeight - priceElement.clientHeight;
 	};
 	scrollResizeHandler();
-	window.addEventListener('resize', scrollResizeHandler);
 
 	priceElement.addEventListener(
 		'scroll',
@@ -137,4 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		}, 100);
 	};
+
+	window.addEventListener(
+		'resize',
+		debounce(() => {
+			pageWrapppers.forEach((page) => {
+				page.style.height = `${document.body.offsetHeight}px`;
+			});
+			scrollResizeHandler();
+		}, 50)
+	);
 });
