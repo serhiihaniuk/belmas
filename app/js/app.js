@@ -157,6 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				page.style.height = `${document.body.offsetHeight}px`;
 			});
 			scrollResizeHandler();
-		}, 50)
+		}, 1000)
 	);
 });
