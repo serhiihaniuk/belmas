@@ -1,6 +1,11 @@
 import { portfolioPage } from './lazyHtml';
 
 document.addEventListener('DOMContentLoaded', () => {
+	const bodyHeight = document.body.offsetHeight;
+	const pageWrapppers = document.body.querySelectorAll('.swiper-slide');
+	pageWrapppers.forEach((page)=>{
+		page.style.height = `${bodyHeight}px`
+	})
 	//utils
 	const trottle = (callback) => {
 		let wait = false;
@@ -92,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	};
 
-    //price component
+	//price component
 	const priceElement = document.querySelector('.price');
 	const priceScrollbar = document.querySelector('.price__scrollbar');
 	const priceScrollbarThumb = document.querySelector('.price__thumb');
@@ -115,14 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	);
 
-
 	//lazyLoad
 	setTimeout(() => {
 		const portfolioSectionDiv = document.body.querySelector('.portfolio-page__wrapper');
 		portfolioSectionDiv.insertAdjacentHTML('afterbegin', portfolioPage);
 		runPortfolioSlider();
 		insertPortfolioImages();
-        runBookButtons()
+		runBookButtons();
 	}, 1000);
 
 	const insertPortfolioImages = () => {
