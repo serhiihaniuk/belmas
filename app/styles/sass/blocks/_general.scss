@@ -1,30 +1,30 @@
-html, body {
-  scroll-behavior: smooth;
+html,
+body {
+	scroll-behavior: smooth;
 }
-body{
-  overflow: hidden;
+body {
+	overflow: hidden;
+	height: 100%;
+	position: relative;
 }
 @font-face {
-  font-display: swap;
+	font-display: swap;
 }
 
 .page-wrapper {
-  // height: 100vh;
-  width: 100%;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  position: fixed;
-  inset: 0;
+	position: absolute;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	inset: 15px;
 }
 
 .swiper-slide {
-  // height: 100vh;
-  transition: height .2s ease;
-  width: 100%;
-  overflow: hidden;
-  scroll-snap-align: start;
+	// height: 100vh;
+	transition: height 0.2s ease;
+	width: 100%;
+	overflow: hidden;
+	scroll-snap-align: start;
 }
-
 
 $content-width: 1100;
 $bp1: 1200px;
@@ -33,28 +33,27 @@ $bp3: 768px;
 $bp4: 576px;
 
 .container {
-  // border: 1px red dashed;
+	// border: 1px red dashed;
 
-  @media (min-width: $bp4) {
-    width: 100%;
-    margin: 0 auto;
+	@media (min-width: $bp4) {
+		width: 100%;
+		margin: 0 auto;
+	}
 
-  }
-
-  @media (min-width: $bp4) {
-    width: 540px;
-    margin: 0 auto;
-  }
-  @media (min-width: $bp3) {
-    width: 720px;
-    margin: 0 auto;
-  }
-  @media (min-width: $bp2) {
-    width: 960px;
-    margin: 0 auto;
-  }
-  @media (min-width: $bp1) {
-    width: $content-width+px;
-    margin: 0 auto;
-  }
+	@media (min-width: $bp4) {
+		width: 540px;
+		margin: 0 auto;
+	}
+	@media (min-width: $bp3) {
+		width: 720px;
+		margin: 0 auto;
+	}
+	@media (min-width: $bp2) {
+		width: 960px;
+		margin: 0 auto;
+	}
+	@media (min-width: $bp1) {
+		width: $content-width + px;
+		margin: 0 auto;
+	}
 }
