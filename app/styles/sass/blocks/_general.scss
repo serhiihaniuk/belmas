@@ -5,7 +5,8 @@ body {
 body {
 	overflow: hidden;
 	height: 100vh;
-	position: relative;
+	position: fixed;
+	inset: 0;
 }
 @font-face {
 	font-display: swap;
