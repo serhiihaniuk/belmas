@@ -30,6 +30,9 @@
   letter-spacing: 1.1px;
   position: relative;
   z-index: 5;
+  @media screen and(max-height: $smallMobileHeightBreakpoint){
+    font-size: 16px;
+  }
 }
 
 .price-page__description {
@@ -39,6 +42,9 @@
   margin: 15px 0;
   position: relative;
   z-index: 5;
+  @media screen and(max-height: $smallMobileHeightBreakpoint){
+    display: none;
+  }
 }
 
 .price {
@@ -58,7 +64,6 @@
 }
 .price__scrollbar{
   background: linear-gradient(0deg, rgba(252,245,238,0) 0%, rgba(252,245,238,0.7) 16%, rgba(223,182,164,1) 50%, rgba(252,245,238,0.7) 88%, rgba(252,245,238,0) 100%);
-  
   border-radius:5px;
   position: absolute;
   right: 8px;
@@ -67,6 +72,10 @@
   z-index: 10;
   transform: all 1s ease;
   overflow: hidden;
+  @media screen and(max-height: $smallMobileHeightBreakpoint){
+    top: 40px;
+  }
+
   .price__thumb{
     width: 5px;
     background-color: $bg-dark;
