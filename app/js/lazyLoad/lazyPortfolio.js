@@ -1,4 +1,13 @@
-export const portfolioPage =  `
+export const insertPortfolioImages = () => {
+	setTimeout(() => {
+		const portfolioImages = document.body.querySelectorAll('.portfolio-page__img--big');
+		portfolioImages.forEach((img) => {
+			img.src = img.dataset.href;
+		});
+	}, 100);
+};
+
+export const portfolioPage = `
 
 <div class="portfolio-page__slider">
         <div class="portfolio-page__slide 1">
@@ -106,10 +115,10 @@ export const portfolioPage =  `
     </div>
     <div class="portfolio-page__next-page">
         <button class="btn-main portfolio-page__order-btn open-popup">Zarezerwuj wizytę</button>
-        <button class="btn-arrow fadeIn">
+        <button class="btn-arrow fadeIn next-section">
             <img src="images/dist/goNext.svg" alt="next slide" class="btn-arrow__img">
         </button>
     </div>
 
 
-`
+`;
