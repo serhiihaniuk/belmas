@@ -60,7 +60,7 @@
     top: -227px;
     right: -177px;
     pointer-events: none;
-    animation: move 21s linear infinite 1s , appear 3s ease .2s backwards;
+    animation: move 21s linear infinite 1s , appear 3s ease .1s backwards;
     z-index: 1;
 }
 
@@ -69,7 +69,7 @@
     left: -76%;
     width: 450px;
     height: 491px;
-    animation: move 33s linear infinite  1s,  appear 3s ease .3s backwards;
+    animation: move 33s linear infinite  1s,  appear 3s ease .2s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         bottom: -165%;
         left: -154%;
@@ -82,7 +82,7 @@
     z-index: 5;
     width: 246px;
     height: 263px;
-    animation: appear 1s ease 1s backwards;
+    animation: appear 1s ease-in .5s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         width: 200px;
         height: 210px;

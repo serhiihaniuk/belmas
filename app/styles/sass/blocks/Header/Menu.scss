@@ -10,7 +10,7 @@
   flex-direction: column;
   border-radius: 0 0 0 100%;
   transform: translateY(-130%);
-  transition: border-radius .5s ease .3s, transform .4s ease-out;
+  transition: border-radius .2s ease, transform .4s ease-out .15s;
   overflow: hidden;
   &__bg {
     position: absolute;
@@ -23,6 +23,7 @@
 .menu.open {
   transform: translateY(0);
   border-radius: 0;
+  transition: border-radius .5s ease .3s, transform .4s ease-out;
 
   .menu__logo {
     transform:  translateY(0);
