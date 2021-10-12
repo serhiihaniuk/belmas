@@ -61,6 +61,7 @@
     right: -177px;
     pointer-events: none;
     animation: move 21s linear infinite 1s , appear 3s ease .1s backwards;
+    will-change: opacity, transform;
     z-index: 1;
 }
 
@@ -70,6 +71,7 @@
     width: 450px;
     height: 491px;
     animation: move 33s linear infinite  1s,  appear 3s ease .2s backwards;
+    will-change: opacity, transform;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         bottom: -165%;
         left: -154%;
@@ -102,11 +104,13 @@
     stroke-dasharray: 550;
     stroke-dashoffset: 1100;
     animation: dash 28s ease-in-out infinite 2s backwards;
+    will-change: stroke-dashoffset, stroke;
 }
 .svg-animated2 {
     stroke-dasharray: 850;
     stroke-dashoffset: 1680;
     animation: dash2 41s linear infinite backwards 3s;
+    will-change: stroke-dashoffset, stroke;
 }
 
 @keyframes dash {
