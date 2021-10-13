@@ -1,5 +1,4 @@
 import { portfolioPage, insertPortfolioImages } from './lazyLoad/lazyPortfolio';
-import { debounce } from './utils';
 import { runPortfolioSlider } from './slider';
 import { runMenuLinks, runMenuBurger } from './menu';
 import { scrollResizeHandler } from './price';
@@ -55,11 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		runNextSectionScroll();
 	}, 400);
 
-	window.addEventListener(
-		'resize',
-		debounce(() => {
+	window.addEventListener('resize', () => {
+		requestAnimationFrame(() => {
 			setSectionHeight();
 			scrollResizeHandler();
-		}, 50)
-	);
+		});
+	});
 });
+
+

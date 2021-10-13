@@ -1,4 +1,5 @@
 const menuItem = document.getElementById('nav-icon3');
+const popupWrapper = document.querySelector('.book');
 const menu = document.querySelector('.menu');
 
 export const runMenuBurger = () => {
@@ -17,3 +18,11 @@ export const runMenuLinks = () => {
 		});
 	});
 };
+
+document.addEventListener('keydown', (e)=>{
+	if(e.key === 'Escape') {
+		menu.classList.remove('open');
+		menuItem.classList.remove('open');
+		popupWrapper.classList.remove('open');
+	}
+})

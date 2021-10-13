@@ -125,20 +125,24 @@
 .price-page__bg--1 {
   top: -50px;
   left: 250px;
+  animation: appear 1s ease-in .1s backwards;
 }
 
 .price-page__bg--2 {
   bottom: -200px;
   right: 0;
+  animation: appear 1s ease-in .2s backwards;
 
 }
 
 .price-page__bg--3 {
   bottom: -50px;
   z-index: 3;
+  animation: appear 1s ease-in .3s backwards;
 }
 
 .price-page__bg--4 {
   top: -50px;
   z-index: 3;
+  animation: appear 1s ease-in .4s backwards;
 }
