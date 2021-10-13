@@ -26,6 +26,7 @@
 }
 
 .book__wrapper {
+  visibility: hidden;
   background-color: #FEFBF3;
   color: #11324D;
   width: 90vw;
@@ -51,6 +52,7 @@
 
 
 .open .book__wrapper {
+  visibility: visible;
   transform: translateY(0);
   border-radius: 5px;
   transition: border-radius .5s ease .3s, transform .4s ease-out;
