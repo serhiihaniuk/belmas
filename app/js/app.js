@@ -1,4 +1,4 @@
-import { portfolioPage, insertPortfolioImages } from './lazyLoad/lazyPortfolio';
+import { insertPortfolioImages } from './lazyLoad/lazyPortfolio';
 import { runPortfolioSlider } from './slider';
 import { runMenuLinks, runMenuBurger } from './menu';
 import { scrollResizeHandler } from './price';
@@ -45,14 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//lazyLoad
 	setTimeout(() => {
-		const portfolioSectionDiv = document.body.querySelector('.portfolio-page__wrapper');
-		portfolioSectionDiv.insertAdjacentHTML('afterbegin', portfolioPage);
 		runPortfolioSlider();
 		insertPortfolioImages();
 		runBookButtons();
 		runMenuLinks();
 		runNextSectionScroll();
-	}, 400);
+	}, 300);
 
 	window.addEventListener('resize', () => {
 		requestAnimationFrame(() => {
