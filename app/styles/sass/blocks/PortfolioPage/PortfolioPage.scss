@@ -44,7 +44,6 @@
     flex: 1 0 45%;
     position: relative;
     z-index: 5;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,11 +134,11 @@
 .portfolio-page__next-page {
     width: 100%;
     max-width: 500px;
-    height: 35px;
     position: relative;
     z-index: 5;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 25px 0 15px;
     margin: 0 auto;
 }
@@ -173,14 +172,14 @@
 }
 
 .portfolio-page__order-btn {
-    padding: 7px 16px;
-    color: $dark;
-    border: $dark 2px solid;
-    text-transform: uppercase;
+    margin: 5px 0;
+    border-color: #dfb6a4;
+    padding: 3px 16px;
     cursor: pointer;
     font-size: 14px;
     line-height: 12px;
-    font-weight: bold;
+    max-width: 200px;
+    height: 35px;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         padding: 5px 16px;
         font-size: 14px;
