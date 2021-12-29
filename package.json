@@ -1,7 +1,7 @@
 {
-	"name": "optimizedhtml",
+	"name": "bns",
 	"version": "5.0.0",
-	"description": "OptimizedHTML 5 - Lightweight Gulp Starter",
+	"description": "bns",
 	"main": "index.js",
 	"author": "WebDesign Master",
 	"type": "module",

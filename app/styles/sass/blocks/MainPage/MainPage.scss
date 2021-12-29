@@ -41,7 +41,7 @@
 }
 
 .main-page__bg--1 {
-    bottom: -50%;
+    bottom: -115%;
     height: 300px;
     left: -32px;
     z-index: 2;
@@ -50,8 +50,8 @@
 
 .main-page__bg--2 {
     height: 200px;
-    right: -45%;
-    top: -54%;
+    right: -47%;
+    top: -78%;
     z-index: 2;
     pointer-events: none;
 }
@@ -66,10 +66,10 @@
 }
 
 .main-page__bg--4 {
-    bottom: -83%;
-    left: -76%;
+    bottom: -181%;
+    height: 496px;
+    left: -132%;
     width: 450px;
-    height: 491px;
     animation: move 33s linear infinite  1s,  appear 3s ease .2s backwards;
     will-change: opacity, transform;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
@@ -79,16 +79,16 @@
 }
 
 .logo {
-    margin: 10px 0 60px 0;
+    margin: 10px 0 15px 0;
     position: relative;
     z-index: 5;
-    width: 246px;
-    height: 263px;
+    width: 200px;
+    height: 210px;
     animation: appear 1s ease-in .5s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         width: 200px;
         height: 210px;
-        margin: 10px 0 20px 0;
+        margin: 10px 0 10px 0;
     }
 }
 .main-page__btn {
@@ -101,3 +101,12 @@
 }
 
 
+.main-page__title{
+    z-index: 5;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 35px;
+    display: block;
+    color: #000;
+}
