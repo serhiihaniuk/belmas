@@ -84,7 +84,7 @@
     position: absolute;
     top: 0%;
     z-index: 11;
-  
+
   }
 }
 
@@ -126,12 +126,14 @@
   top: -50px;
   left: 250px;
   animation: appear 1s ease-in .1s backwards;
+  filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.2));
 }
 
 .price-page__bg--2 {
   bottom: -200px;
   right: 0;
   animation: appear 1s ease-in .2s backwards;
+  filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.2));
 
 }
 
@@ -139,10 +141,12 @@
   bottom: -50px;
   z-index: 3;
   animation: appear 1s ease-in .3s backwards;
+  filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.2));
 }
 
 .price-page__bg--4 {
   top: -50px;
   z-index: 3;
   animation: appear 1s ease-in .4s backwards;
+  filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.2));
 }

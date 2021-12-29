@@ -14,11 +14,14 @@
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     position: relative;
     z-index: 2;
     flex: 1 0 auto;
+    @media screen and(min-height: $pcHeightBreakpoint){
+        justify-content: center;
+    }
 }
 
 .main-page__logo {
@@ -46,6 +49,7 @@
     left: -32px;
     z-index: 2;
     pointer-events: none;
+    filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.2));
 }
 
 .main-page__bg--2 {
@@ -54,6 +58,7 @@
     top: -78%;
     z-index: 2;
     pointer-events: none;
+    filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.3));
 }
 
 .main-page__bg--3 {
@@ -63,19 +68,22 @@
     animation: move 21s linear infinite 1s , appear 3s ease .1s backwards;
     will-change: opacity, transform;
     z-index: 1;
+    filter: drop-shadow(7px 3px 8px rgba(0,0,0,0.2));
 }
 
 .main-page__bg--4 {
     bottom: -181%;
-    height: 496px;
-    left: -132%;
-    width: 450px;
+    height: 588px;
+    left: -170%;
+    width: 560px;
     animation: move 33s linear infinite  1s,  appear 3s ease .2s backwards;
     will-change: opacity, transform;
+    filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.2));
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         bottom: -165%;
         left: -154%;
     }
+
 }
 
 .logo {
@@ -86,9 +94,9 @@
     height: 210px;
     animation: appear 1s ease-in .5s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
-        width: 200px;
-        height: 210px;
-        margin: 10px 0 10px 0;
+        width: 180px;
+        height: 190px;
+        margin: 5px 0 5px 0;
     }
 }
 .main-page__btn {
@@ -106,7 +114,14 @@
     text-align: center;
     font-size: 14px;
     font-weight: normal;
-    margin: 0 0 35px;
+    margin: 0 0 15px;
     display: block;
     color: #000;
+    animation: appear 1s ease-in 1s backwards;
+    @media screen and(max-height: $pcHeightBreakpoint){
+        margin: 0 0 35px;
+    }
+    @media screen and(max-height: $smallMobileHeightBreakpoint) {
+        margin: 0 0 5px;
+    }
 }
