@@ -4,7 +4,7 @@
 	"description": "bns",
 	"main": "index.js",
 	"author": "WebDesign Master",
-	"type": "module",
+
 	"browserslist": [
 		"last 10 versions"
 	],
@@ -42,6 +42,7 @@
 		"webpack-stream": "^6.1.2"
 	},
 	"dependencies": {
+		"express": "^4.18.1",
 		"swiper": "^6.8.4"
 	}
 }
