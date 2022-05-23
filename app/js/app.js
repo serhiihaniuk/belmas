@@ -45,6 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollResizeHandler();
     runMenuBurger();
 
+    
+   const changeSizeHandler =  () => {
+        setSectionHeight();
+        scrollResizeHandler();
+        throttleCheckSize();
+    }
     //lazyLoad
     setTimeout(() => {
         runPortfolioSlider();
@@ -56,19 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', () => {
         currentHeight = document.body.offsetHeight;
-        requestAnimationFrame(() => {
-            setSectionHeight();
-            scrollResizeHandler();
-            throttleCheckSize();
-        });
+        requestAnimationFrame(changeSizeHandler);
     });
     window.addEventListener('orientationchange', () => {
         currentHeight = document.body.offsetHeight;
-        requestAnimationFrame(() => {
-            setSectionHeight();
-            scrollResizeHandler();
-            throttleCheckSize();
-        });
+        requestAnimationFrame(changeSizeHandler);
 
     });
 
@@ -82,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     }
+    
+    const checkSizeInterval = setInterval(checkSize, 500);
 
     const throttleCheckSize = trottle(checkSize, 777);
 });
