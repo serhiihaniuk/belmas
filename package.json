@@ -1,9 +1,7 @@
 {
-	"name": "optimizedhtml",
-	"version": "5.0.0",
-	"description": "OptimizedHTML 5 - Lightweight Gulp Starter",
+	"name": "bns",
+	"description": "bns",
 	"main": "index.js",
-	"author": "WebDesign Master",
 	"type": "module",
 	"browserslist": [
 		"last 10 versions"
@@ -41,7 +39,5 @@
 		"sass": "^1.38.0",
 		"webpack-stream": "^6.1.2"
 	},
-	"dependencies": {
-		"swiper": "^6.8.4"
-	}
+	"dependencies": {}
 }

@@ -14,11 +14,14 @@
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     position: relative;
     z-index: 2;
     flex: 1 0 auto;
+    @media screen and(min-height: $pcHeightBreakpoint){
+        justify-content: center;
+    }
 }
 
 .main-page__logo {
@@ -41,19 +44,21 @@
 }
 
 .main-page__bg--1 {
-    bottom: -50%;
+    bottom: -115%;
     height: 300px;
     left: -32px;
     z-index: 2;
     pointer-events: none;
+    filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.2));
 }
 
 .main-page__bg--2 {
     height: 200px;
-    right: -45%;
-    top: -54%;
+    right: -47%;
+    top: -78%;
     z-index: 2;
     pointer-events: none;
+    filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.3));
 }
 
 .main-page__bg--3 {
@@ -63,193 +68,60 @@
     animation: move 21s linear infinite 1s , appear 3s ease .1s backwards;
     will-change: opacity, transform;
     z-index: 1;
+    filter: drop-shadow(7px 3px 8px rgba(0,0,0,0.2));
 }
 
 .main-page__bg--4 {
-    bottom: -83%;
-    left: -76%;
-    width: 450px;
-    height: 491px;
+    bottom: -181%;
+    height: 588px;
+    left: -170%;
+    width: 560px;
     animation: move 33s linear infinite  1s,  appear 3s ease .2s backwards;
     will-change: opacity, transform;
+    filter: drop-shadow(5px 3px 4px rgba(0,0,0,0.2));
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         bottom: -165%;
         left: -154%;
     }
+
 }
 
 .logo {
-    margin: 10px 0 60px 0;
+    margin: 10px 0 15px 0;
     position: relative;
     z-index: 5;
-    width: 246px;
-    height: 263px;
+    width: 200px;
+    height: 210px;
     animation: appear 1s ease-in .5s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
-        width: 200px;
-        height: 210px;
-        margin: 10px 0 20px 0;
+        width: 180px;
+        height: 190px;
+        margin: 5px 0 5px 0;
     }
 }
 .main-page__btn {
     width: 245px;
-    height: 46px;
     animation: appear 1s ease 1.5s backwards;
     @media screen and(max-height: $smallMobileHeightBreakpoint) {
         width: 225px;
         height: 36px;
     }
 }
-.svg-animated {
-    stroke-dasharray: 550;
-    stroke-dashoffset: 1100;
-    animation: dash 28s ease-in-out infinite 2s backwards;
-    will-change: stroke-dashoffset, stroke;
-}
-.svg-animated2 {
-    stroke-dasharray: 850;
-    stroke-dashoffset: 1680;
-    animation: dash2 41s linear infinite backwards 3s;
-    will-change: stroke-dashoffset, stroke;
-}
-
-@keyframes dash {
-    0% {
-        stroke-dashoffset: 1650;
-        stroke: #ffe2e2;
-    }
-    5% {
-        stroke-dashoffset: 1100;
-        stroke: #ffe2e2;
-    }
-
-    10% {
-        stroke-dashoffset: 550;
-        stroke: #ffe2e2;
-    }
-    15% {
-        stroke-dashoffset: 550;
-        stroke: #ffe2e2;
-    }
-    20% {
-        stroke-dashoffset: 1100;
-        stroke: #ffe2e2;
-    }
-    25% {
-        stroke-dashoffset: 1100;
-        stroke: #ffe2e2;
-    }
-    30% {
-        stroke-dashoffset: 2200;
-        stroke: #ffe2e2;
-    }
-    60% {
-        stroke-dashoffset: 2750;
-        stroke: #ffbcbc;
-    }
-    65% {
-        stroke-dashoffset: 2750;
-        stroke: #ffbcbc;
-    }
-    75% {
-        stroke-dashoffset: 2200;
-        stroke: #ffbcbc;
-    }
-    80% {
-        stroke-dashoffset: 2200;
-        stroke: #ffbcbc;
-    }
-    85% {
-        stroke-dashoffset: 1650;
-        stroke: #ffe2e2;
-    }
-    95%{
-        stroke-dashoffset: 1100;
-        stroke: #ffe2e2;
-    }
-    100% {
-        stroke-dashoffset: 1650;
-        stroke: #ffe2e2;
-    }
-}
-
-@keyframes dash2 {
-   
-   
-    0% {
-        stroke-dashoffset: 2510;
-        stroke: $dark;
-    }
-    5% {
-        stroke-dashoffset: 1640;
-        stroke: $dark;
-    }
-    7% {
-        stroke-dashoffset: 820;
-        stroke: $bg-semi-light;
-    }
-    9% {
-        stroke-dashoffset: 850;
-        stroke: $bg-semi-light;
-    }
-    11% {
-        stroke-dashoffset: 1710;
-        stroke: #f5e8c7;
-    }
-    13% {
-        stroke-dashoffset: 2510;
-        stroke: #f5e8c7;
-    }
-    
-    15% {
-        stroke-dashoffset: 3320;
-        stroke: #deba9d;
-    }
-    60% {
-        stroke-dashoffset: 2510;
-        stroke: #f9f9f9;
-    }
-    65% {
-        stroke-dashoffset: 2510;
-        stroke: #f9f9f9;
-    }
-    75% {
-        stroke-dashoffset: 3320;
-        stroke: #ffbcbc;
-    }
-    80% {
-        stroke-dashoffset: 3320;
-        stroke: #ffbcbc;
-    }
-    85% {
-        stroke-dashoffset: 2510;
-        stroke: #ffbcbc;
-    }
-    100% {
-        stroke-dashoffset: 2510;
-        stroke: #f5e8c7;
-    }
-}
-
-@keyframes move {
-    0% {
-        transform: translate(0px, 0px) rotate(0deg);
-    }
-    50% {
-        transform: translate(25px, 25px) rotate(6deg);
-    }
-    100% {
-        transform: translate(0px, 0px) rotate(0deg);
-    }
-}
-
-@keyframes appear {
-    0% {
-        opacity: 0;
 
 
+.main-page__title{
+    z-index: 5;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 15px;
+    display: block;
+    color: #000;
+    animation: appear 1s ease-in 1s backwards;
+    @media screen and(max-height: $pcHeightBreakpoint){
+        margin: 0 0 35px;
     }
-    100% {
-        opacity: 1;
+    @media screen and(max-height: $smallMobileHeightBreakpoint) {
+        margin: 0 0 5px;
     }
 }

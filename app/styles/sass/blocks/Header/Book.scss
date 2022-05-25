@@ -15,7 +15,6 @@
   pointer-events: none;
   z-index: 60;
   will-change: opacity;
-  
 }
 
 .book.open {
@@ -27,7 +26,7 @@
 
 .book__wrapper {
   visibility: hidden;
-  background-color: #FEFBF3;
+  background-color: rgba(254,251,243, 0.9);
   color: #11324D;
   width: 90vw;
   max-width: 420px;
@@ -38,8 +37,8 @@
   position: relative;
   z-index: 65;
   border-radius: 3% 3% 10% 35%;
-  transform: translateY(-55%);
-  transition: border-radius .5s ease, transform .4s ease-out .1s;
+  transform: translateY(-25%);
+  transition: border-radius .3s ease, transform .2s ease-out .1s;
   will-change: border-radius, transform;
   box-shadow: 5px 10px 25px -2px rgba(0, 0, 0, 0.4);
   overflow-x: hidden;
@@ -54,8 +53,9 @@
 .open .book__wrapper {
   visibility: visible;
   transform: translateY(0);
-  border-radius: 5px;
-  transition: border-radius .5s ease .3s, transform .4s ease-out;
+  border-radius: 15px;
+  transition: border-radius .3s ease .2s, transform .3s ease-out;
+  will-change: border-radius, transform;
 }
 
 .book__contacts {
@@ -87,8 +87,8 @@
   flex-direction: column;
   flex: 1 0 100%;
   justify-content: flex-start;
-  
-  
+
+
 }
 
 .book__item {
@@ -115,3 +115,11 @@
   }
 }
 
+@supports (backdrop-filter: blur(3px)) {
+  .book {
+    backdrop-filter: blur(5px);
+  }
+  .book__wrapper {
+    background-color: rgba(254,251,243, 0.8);
+  }
+}
